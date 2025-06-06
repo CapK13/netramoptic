@@ -8,7 +8,7 @@ import Frames from './Comps/Frames';
 import Goggles from './Comps/Goggles';
 import ReadingGlasses from './Comps/ReadingGlasses';
 import Wolfeyes from './Comps/wolfeyes';
-import Enfys from './Comps/enfys';
+import Enfys from './Comps/Enfys';
 import Scott from './Comps/Scott';
 import Knighthorse from './Comps/Knighthorse';
 import Kyaans from './Comps/Kyaans';
@@ -30,7 +30,7 @@ import PrivacyPolicy from './Comps/Footer_Comps/PrivacyPolicy'
 import AuthPage from './Pages/AuthPage';
 
 const App = () => {
-    
+
   const [user, setUser] = useState(null);
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -38,12 +38,12 @@ const App = () => {
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
-  },  []);
+  }, []);
 
   return (
-    <>                
+    <>
       <Navbar user={user} setUser={setUser} />
-      <Routes>          
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/frames" element={<Frames />} />
         <Route path="/goggles" element={<Goggles />} />
@@ -72,7 +72,7 @@ const App = () => {
           element={<Profile user={user} setUser={setUser} />}
         />
       </Routes>
-      
+
     </>
 
   );
