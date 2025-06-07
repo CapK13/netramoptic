@@ -220,7 +220,7 @@ const Navbar = ({ user, setUser }) => {
           }
           onClick={() => setIsOpen(false)}
         >
-          <i className="fa-solid fa-cart-shopping text-2xl"></i>
+          <i className="fa-solid fa-cart-shopping text-2xl text-green"></i>
         </NavLink>
         {user ? (
           <Link
