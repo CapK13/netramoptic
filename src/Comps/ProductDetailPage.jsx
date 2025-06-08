@@ -203,13 +203,13 @@ const ProductDetailPage = () => {
               </p>
 
 
-              <div className="hidden sm:flex text-sm sm:text-lg text-gray-700 items-center gap-2">
+              {/* <div className="hidden sm:flex text-sm sm:text-lg text-gray-700 items-center gap-2">
                 <span className="font-semibold"> <span className="font-bold">color</span> :  {product.pro_color} </span>
                 <span
                   className="w-5 h-5 rounded-full border border-gray-300"
                   style={{ backgroundColor: product.pro_color }}
                 ></span>
-              </div>
+              </div> */}
 
               <StarRating rating={product.pro_rating || 4.2} />
 
