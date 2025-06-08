@@ -38,7 +38,7 @@ const Welcome = () => {
         variants={word}
         className="text-lg sm:text-xl md:text-2xl font-medium text-gray-100 z-10"
       >
-        EyeWear for Every Face. Every Mood.
+        Eyewear for Every Face. Every Mood.
       </motion.p>
     </motion.div>
   );
