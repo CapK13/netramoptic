@@ -1678,9 +1678,9 @@ data = {
         },
          {
             "pro_id": 2003,
-            "pro_name": "Benhunt 120 C2",
+            "pro_name": "Benhunt",
             "pro_price": 1900,
-            "pro_image": "/media/imgs/goggles/benhunt_120_C2_57_M_1899.jpg",
+            "pro_image": "/media/imgs/goggles/benhunt_1899_M.jpg",
             "pro_images": [
             ],
             "pro_style": "full_frame",
@@ -1688,7 +1688,7 @@ data = {
             "pro_size": "M",
             "pro_material": "plastic",
             "pro_shape": "round",
-            "pro_gender": "women",
+            "pro_gender": "men",
             "pro_category" : "goggle",
             "pro_brand" : "benhunt"
          },
@@ -1831,22 +1831,6 @@ data = {
             "pro_color": "blue",
             "pro_size": "M",
             "pro_material": "plastic",
-            "pro_shape": "aviator",
-            "pro_gender": "women",
-            "pro_category" : "goggle",
-            "pro_brand" : "benhunt"
-         },
-         {
-            "pro_id": 2013,
-            "pro_name": "Benhunt 84046 C1",
-            "pro_price": 1500,
-            "pro_image": "/media/imgs/goggles/benhunt_84046_C1_W_1500.jpg",
-            "pro_images": [
-            ],
-            "pro_style": "full_frame",
-            "pro_color": "blue",
-            "pro_size": "M",
-            "pro_material": "plastic",  
             "pro_shape": "aviator",
             "pro_gender": "women",
             "pro_category" : "goggle",
@@ -3511,6 +3495,7 @@ data = {
     ]
 }
 
+
 def insert_data_to_mongodb():
     try:
         username = urllib.parse.quote_plus("vrajesh")
@@ -3518,28 +3503,43 @@ def insert_data_to_mongodb():
         mongo_uri = f"mongodb+srv://{username}:{password}@cluster0.iyga0yz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
         
         client = MongoClient(mongo_uri)
-        db = client['netramoptics']  
+        db = client['netramoptics']
         frames_collection = db['frames']
         goggles_collection = db['goggles']
         reading_glasses_collection = db['reading_glasses']
 
+        # ✅ Remove all old data first
+        frames_collection.delete_many({})
+        goggles_collection.delete_many({})
+        reading_glasses_collection.delete_many({})
+
+        # ✅ Insert new data
         if data['frames']:
-            frames_collection.insert_many(data['frames'])
-            print(f"Inserted {len(data['frames'])} documents into 'frames' collection.")
+            if all(isinstance(doc, dict) for doc in data['frames']):
+                frames_collection.insert_many(data['frames'])
+                print(f"Inserted {len(data['frames'])} documents into 'frames' collection.")
+            else:
+                print("❌ 'frames' contains non-dict items.")
 
         if data['goggles']:
-            goggles_collection.insert_many(data['goggles'])
-            print(f"Inserted {len(data['goggles'])} documents into 'goggles' collection.")
+            if all(isinstance(doc, dict) for doc in data['goggles']):
+                goggles_collection.insert_many(data['goggles'])
+                print(f"Inserted {len(data['goggles'])} documents into 'goggles' collection.")
+            else:
+                print("❌ 'goggles' contains non-dict items.")
 
         if data['reading_glasses']:
-            reading_glasses_collection.insert_many(data['reading_glasses'])
-            print(f"Inserted {len(data['reading_glasses'])} documents into 'reading_glasses' collection.")
+            if all(isinstance(doc, dict) for doc in data['reading_glasses']):
+                reading_glasses_collection.insert_many(data['reading_glasses'])
+                print(f"Inserted {len(data['reading_glasses'])} documents into 'reading_glasses' collection.")
+            else:
+                print("❌ 'reading_glasses' contains non-dict items.")
 
         client.close()
-        print("MongoDB connection closed.")
+        print("✅ MongoDB connection closed.")
 
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"❌ An error occurred: {e}")
 
 if __name__ == "__main__":
     insert_data_to_mongodb()
