@@ -38,8 +38,8 @@ const Footer = () => {
         {/* Contact & Social */}
         <div>
           <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-          <p className="text-sm">Email: support@netram.com</p>
-          <p className="text-sm mb-4">Phone: +91 98765 43210</p>
+          <p className="text-sm">Email: netramforever@gmail.com</p>
+          <p className="text-sm mb-4">Phone: +91 98983 92525</p>
           <div className="flex space-x-4 text-lg">
             <a href="#" className="hover:text-blue-500"><i className="fab fa-facebook-f"></i></a>
             <a href="#" className="hover:text-pink-500"><i className="fab fa-instagram"></i></a>
