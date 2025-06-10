@@ -2324,6 +2324,38 @@ data = {
             "pro_gender": "men",
             "pro_category" : "goggle",
             "pro_brand" : "benhunt"
+         },
+         {
+            "pro_id": 2017,
+            "pro_name": "Benhunt polarised",
+            "pro_price": 1599,
+            "pro_image": "/media/imgs/goggles/benhunt_1599_polarised_F.jpg",
+            "pro_images": [
+            ],
+            "pro_style": "full_frame",
+            "pro_color": "blue",
+            "pro_size": "M",
+            "pro_material": "plastic",
+            "pro_shape": "aviator",
+            "pro_gender": "women",
+            "pro_category" : "goggle",
+            "pro_brand" : "benhunt"
+         },
+         {
+            "pro_id": 2018,
+            "pro_name": "Benhunt italy",
+            "pro_price": 1599,
+            "pro_image": "/media/imgs/goggles/benhunt_Italy_design_1599_F.jpg",
+            "pro_images": [
+            ],
+            "pro_style": "full_frame",
+            "pro_color": "blue",
+            "pro_size": "M",
+            "pro_material": "fiber",
+            "pro_shape": "aviator",
+            "pro_gender": "women",
+            "pro_category" : "goggle",
+            "pro_brand" : "benhunt"
          }
     ],
     "reading_glasses" : [
