@@ -1754,7 +1754,7 @@ data = {
          },
          {
             "pro_id": 1086,
-            "pro_name": "Enfys FA5203 C2",
+            "pro_name": "farenhiet FA5203 C2",
             "pro_price": 1300,
             "pro_image": "/media/imgs/frames/VF_FA5203_C2_1300.jpg",
             "pro_images": [
