@@ -1,25 +1,34 @@
-import React, { useState } from 'react';
-import Prods from '../pro2.json';
-import ProductCard from './ProductCard';
+import React, { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import ProductCard from './ProductCard';
 
 const Tomhardy = () => {
+  const [frames, setFrames] = useState([]);
+  const [visibleCount, setVisibleCount] = useState(9);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
   const [genderFilter, setGenderFilter] = useState('all');
   const [priceFilter, setPriceFilter] = useState('all');
   const [styleFilter, setStyleFilter] = useState('all');
-  const [visibleCount, setVisibleCount] = useState(9);
-    
+
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
   const loadMore = () => setVisibleCount((prev) => prev + 6);
 
-  const getFilteredFrames = () => {
-    if (!Prods.frames || !Array.isArray(Prods.frames)) {
-      console.warn("No 'frames' array found in pro2.json");
-      return [];
-    }
+  useEffect(() => {
+    fetch('https://netramoptics.onrender.com/fetchData')
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setFrames(data);
+        } else {
+          console.warn("Expected an array of frames from API");
+        }
+      })
+      .catch((err) => console.error("API fetch error:", err));
+  }, []);
 
-    return Prods.frames
+  const getFilteredFrames = () => {
+    return frames
       .filter((frame) => frame.pro_brand?.toLowerCase() === 'tomhardy')
       .filter((frame) => {
         const price = Number(frame.pro_price);
@@ -47,15 +56,12 @@ const Tomhardy = () => {
   return (
     <div className="min-h-screen w-full flex bg-gray-100 transition-all duration-300">
       {/* Sidebar */}
-      <div
-        className={`fixed top-0 left-0 h-screen w-1/4 max-md:w-[100vw] bg-gray-900 shadow-md z-30 transition-all duration-300 transform
-          ${sidebarOpen ? 'translate-x-0 opacity-100 pointer-events-auto' : '-translate-x-full opacity-0 pointer-events-none'}`}
-      >
+      <div className={`fixed top-0 left-0 h-screen w-1/4 max-md:w-[100vw] bg-gray-900 shadow-md z-30 transition-all duration-300 transform ${sidebarOpen ? 'translate-x-0 opacity-100 pointer-events-auto' : '-translate-x-full opacity-0 pointer-events-none'}`}>
         <div className="p-4">
           <div className="absolute top-4 right-4 z-40">
             <button
               onClick={toggleSidebar}
-              className="close_sidebar_btn w-10 h-10 flex items-center justify-center rounded-full border border-gray-600 bg-gray-800 text-gray-300 hover:bg-red-600 hover:text-white shadow-lg transition duration-300"
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-600 bg-gray-800 text-gray-300 hover:bg-red-600 hover:text-white shadow-lg transition duration-300"
               title="Close"
             >
               <i className="fa-solid fa-xmark text-lg"></i>
@@ -68,10 +74,7 @@ const Tomhardy = () => {
               <button
                 key={option}
                 onClick={() => setGenderFilter(option)}
-                className={`px-4 py-2 rounded-full border font-semibold transition duration-300
-                  ${genderFilter === option
-                    ? 'bg-red-600 text-white border-red-600'
-                    : 'bg-gray-800 text-gray-200 border-gray-600 hover:bg-gray-700'}`}
+                className={`px-4 py-2 rounded-full border font-semibold transition duration-300 ${genderFilter === option ? 'bg-red-600 text-white border-red-600' : 'bg-gray-800 text-gray-200 border-gray-600 hover:bg-gray-700'}`}
               >
                 {option.charAt(0).toUpperCase() + option.slice(1)}
               </button>
@@ -84,10 +87,7 @@ const Tomhardy = () => {
               <button
                 key={range}
                 onClick={() => setPriceFilter(range)}
-                className={`px-4 py-2 rounded-full border font-semibold transition duration-300
-                  ${priceFilter === range
-                    ? 'bg-red-600 text-white border-red-600'
-                    : 'bg-gray-800 text-gray-200 border-gray-600 hover:bg-gray-700'}`}
+                className={`px-4 py-2 rounded-full border font-semibold transition duration-300 ${priceFilter === range ? 'bg-red-600 text-white border-red-600' : 'bg-gray-800 text-gray-200 border-gray-600 hover:bg-gray-700'}`}
               >
                 {range === 'all' ? 'All' : `₹${range.replace('-', ' - ₹')}`}
               </button>
@@ -100,10 +100,7 @@ const Tomhardy = () => {
               <button
                 key={style}
                 onClick={() => setStyleFilter(style)}
-                className={`px-4 py-2 rounded-full border font-semibold transition duration-300
-                  ${styleFilter === style
-                    ? 'bg-red-600 text-white border-red-600'
-                    : 'bg-gray-800 text-gray-200 border-gray-600 hover:bg-gray-700'}`}
+                className={`px-4 py-2 rounded-full border font-semibold transition duration-300 ${styleFilter === style ? 'bg-red-600 text-white border-red-600' : 'bg-gray-800 text-gray-200 border-gray-600 hover:bg-gray-700'}`}
               >
                 {style === 'all' ? 'All' : style.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
               </button>

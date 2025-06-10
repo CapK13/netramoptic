@@ -273,7 +273,7 @@ data = {
             "pro_rating": 4.8,
             "pro_gender": "kids",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {
             "pro_id": 1014,
@@ -420,7 +420,7 @@ data = {
             "pro_rating": 4.5,
             "pro_gender": "women",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {
             "pro_id": 1021,
@@ -1008,7 +1008,7 @@ data = {
             "pro_rating": 4.5,
             "pro_gender": "kids",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {           
             "pro_id": 1049,
@@ -1113,7 +1113,7 @@ data = {
             "pro_rating": 4.8,
             "pro_gender": "men",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {           
             "pro_id": 1054,
@@ -1134,7 +1134,7 @@ data = {
             "pro_rating": 4.7,
             "pro_gender": "men",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {           
             "pro_id": 1055,
@@ -1155,7 +1155,7 @@ data = {
             "pro_rating": 4.7,
             "pro_gender": "men",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {           
             "pro_id": 1056,
@@ -1176,7 +1176,7 @@ data = {
             "pro_rating": 4.7,
             "pro_gender": "men",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {           
             "pro_id": 1057,
@@ -1885,7 +1885,7 @@ data = {
             "pro_shape": "round",
             "pro_gender": "men",
             "pro_category" : "frames",
-            "pro_brand" : "first_time"
+            "pro_brand" : "firsttime"
          },
          {
             "pro_id": 1093,
@@ -2596,7 +2596,7 @@ data = {
             "pro_rating": 4.8,
             "pro_gender": "kids",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {
             "pro_id": 1014,
@@ -2743,7 +2743,7 @@ data = {
             "pro_rating": 4.5,
             "pro_gender": "women",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {
             "pro_id": 1021,
@@ -3331,7 +3331,7 @@ data = {
             "pro_rating": 4.5,
             "pro_gender": "kids",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {           
             "pro_id": 1049,
@@ -3352,7 +3352,7 @@ data = {
             "pro_rating": 4.6,
             "pro_gender": "kids",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {                   
             "pro_id": 1050,
@@ -3373,7 +3373,7 @@ data = {
             "pro_rating": 4.6,
             "pro_gender": "kids",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {           
             "pro_id": 1051,
@@ -3394,7 +3394,7 @@ data = {
             "pro_rating": 4.6,
             "pro_gender": "kids",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {           
             "pro_id": 1052,
@@ -3415,7 +3415,7 @@ data = {
             "pro_rating": 4.6,
             "pro_gender": "kids",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {           
             "pro_id": 1053,
@@ -3436,7 +3436,7 @@ data = {
             "pro_rating": 4.8,
             "pro_gender": "men",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {           
             "pro_id": 1054,
@@ -3457,7 +3457,7 @@ data = {
             "pro_rating": 4.7,
             "pro_gender": "men",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {           
             "pro_id": 1055,
@@ -3478,7 +3478,7 @@ data = {
             "pro_rating": 4.7,
             "pro_gender": "men",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {           
             "pro_id": 1056,
@@ -3499,7 +3499,7 @@ data = {
             "pro_rating": 4.7,
             "pro_gender": "men",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "firsttime"
         },
         {           
             "pro_id": 1057,

@@ -1,52 +1,57 @@
-import React, { useState } from 'react';
-import Prods from '../pro2.json';
+import React, { useState, useEffect } from 'react';
 import ProductCard from './ProductCard';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 const Enfys = () => {
+  const [frames, setFrames] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [genderFilter, setGenderFilter] = useState('all');
   const [priceFilter, setPriceFilter] = useState('all');
   const [styleFilter, setStyleFilter] = useState('all');
   const [visibleCount, setVisibleCount] = useState(9);
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+  const loadMore = () => setVisibleCount((prev) => prev + 6);
 
-  const loadMore = () => {
-    setVisibleCount((prev) => prev + 6);
-  };
+  useEffect(() => {
+    const fetchFrames = async () => {
+      try {
+        const response = await fetch('https://netramoptics.onrender.com/fetchData');
+        const data = await response.json();
+        const enfysFrames = data.frames?.filter(
+          (frame) => frame.pro_brand?.toLowerCase() === 'enfys'
+        );
+        setFrames(enfysFrames || []);
+      } catch (error) {
+        console.error('Error fetching Enfys frames:', error);
+      }
+    };
+
+    fetchFrames();
+  }, []);
 
   const getFilteredFrames = () => {
-    if (!Prods.frames || !Array.isArray(Prods.frames)) {
-      console.warn("No 'frames' array found in pro2.json");
-      return [];
-    }
+    return frames.filter((frame) => {
+      const price = Number(frame.pro_price);
+      const style = frame.pro_style?.toLowerCase();
+      const gender = frame.pro_gender?.toLowerCase();
 
-    return Prods.frames
-      .filter((frame) => frame.pro_brand?.toLowerCase() === 'enfys')
-      .filter((frame) => {
-        const price = Number(frame.pro_price);
-        const style = frame.pro_style?.toLowerCase();
-        const gender = frame.pro_gender?.toLowerCase();
+      const genderCheck = genderFilter === 'all' || gender === genderFilter;
+      const styleCheck = styleFilter === 'all' || style === styleFilter;
 
-        const genderCheck = genderFilter === 'all' || gender === genderFilter;
-        const styleCheck = styleFilter === 'all' || style === styleFilter;
+      const priceCheck = (() => {
+        switch (priceFilter) {
+          case '0-500': return price <= 500;
+          case '501-1000': return price > 500 && price <= 1000;
+          case '1001-3000': return price > 1000 && price <= 3000;
+          case '3001-5000': return price > 3000 && price <= 5000;
+          case '5000+': return price > 5000;
+          default: return true;
+        }
+      })();
 
-        const priceCheck = (() => {
-          switch (priceFilter) {
-            case '0-500': return price <= 500;
-            case '501-1000': return price > 500 && price <= 1000;
-            case '1001-3000': return price > 1000 && price <= 3000;
-            case '3001-5000': return price > 3000 && price <= 5000;
-            case '5000+': return price > 5000;
-            default: return true;
-          }
-        })();
-
-        return genderCheck && priceCheck && styleCheck;
-      });
+      return genderCheck && styleCheck && priceCheck;
+    });
   };
 
   return (
@@ -98,7 +103,7 @@ const Enfys = () => {
               </button>
             ))}
           </div>
-          
+
           <h2 className="text-xl font-bold mb-4 text-white">Style</h2>
           <div className="flex flex-wrap gap-3 mb-6">
             {['all', 'full_frame', 'half_frame', 'rimless'].map((style) => (
