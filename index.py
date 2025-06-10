@@ -110,25 +110,23 @@ data = {
         },
         {
             "pro_id": 1006,
-            "pro_name": "enfys extra",
-            "pro_price": 6000,
-            "pro_image": "/media/imgs/frames/enfys I216 C4.jpg",
+            "pro_name": "DNW 92016",
+            "pro_price": 500,
+            "pro_image": "/media/imgs/frames/DNW_92016_R500_C0_i1.jpg",
             "pro_images": [
-              "/media/imgs/frames/enfys_DTX118_46_01.jpg",
-              "/media/imgs/frames/enfys_DTX124_49_02.jpg",
-              "/media/imgs/frames/enfys_DTX118_46_01.jpg",
-              "/media/imgs/frames/enfys_DTX124_49_02.jpg",
-              "/media/imgs/frames/enfys_DTX124_49_02.jpg"
-            ],
+              "/media/imgs/frames/DNW_92016_R500_C0_i1.jpg",
+              "/media/imgs/frames/DNW_92016_R500_C0_i2.jpg",
+              "/media/imgs/frames/DNW_92016_R500_C0_i3.jpg",
+              "/media/imgs/frames/DNW_92016_R500_C0_i4.jpg"
+              ],
             "pro_style": "full_frame",
             "pro_color": "blue",
             "pro_size": "M",
-            "pro_material": "plastic",
-            "pro_shape": "round",
-            "pro_gender": "women",
+            "pro_material": "fiber",
+            "pro_shape": "square",
+            "pro_gender": "men",
             "pro_category" : "frames",
-            "pro_brand": "enfys"
-
+            "pro_brand": "dnw"
         },
         {
             "pro_id": 1007,
@@ -175,7 +173,7 @@ data = {
         {
             "pro_id": 1009,
             "pro_name": "Tom hardy 66009",
-            "pro_price": 310,
+            "pro_price": 450,
             "pro_image": "/media/imgs/frames/Tomhardy_66009_C3_i1.jpg",
             "pro_images": [
               "/media/imgs/frames/Tomhardy_66009_C3_i1.jpg",
@@ -720,24 +718,24 @@ data = {
         },
         {
             "pro_id": 1035,
-            "pro_name": "enfys ACT-TEN",
-            "pro_price": 5500,
-            "pro_image": "/media/imgs/frames/ENFYS_ACT-TEN_i1.jpg",
+            "pro_name": "DNW 92016",
+            "pro_price": 500,
+            "pro_image": "/media/imgs/frames/DNW_92016_R500_C2_i1.jpg",
             "pro_images": [
-              "/media/imgs/frames/ENFYS_ACT-TEN_i1.jpg",
-              "/media/imgs/frames/ENFYS_ACT-TEN_i2.jpg",
-              "/media/imgs/frames/ENFYS_ACT-TEN_i3.jpg",
-              "/media/imgs/frames/ENFYS_ACT-TEN_i4.jpg"
+              "/media/imgs/frames/DNW_92016_R500_C2_i1.jpg",
+              "/media/imgs/frames/DNW_92016_R500_C2_i2.jpg",
+              "/media/imgs/frames/DNW_92016_R500_C2_i3.jpg",
+              "/media/imgs/frames/DNW_92016_R500_C2_i4.jpg"
             ],
             "pro_style": "full_frame",
             "pro_color": "grey",
             "pro_size": "M",
             "pro_material": "Fiber",
             "pro_shape": "round",
-            "pro_rating": 4.6,
+            "pro_rating": 4.7,
             "pro_gender": "men",
             "pro_category" : "frames",
-            "pro_brand": "enfys"
+            "pro_brand": "dnw"
         },
         {
             "pro_id": 1036,
@@ -1014,14 +1012,14 @@ data = {
         },
         {           
             "pro_id": 1049,
-            "pro_name": "First time 5E201",
-            "pro_price": 450,
-            "pro_image": "/media/imgs/frames/first_time__5E201_C1_i1.jpg",
+            "pro_name": "DNW 92023",
+            "pro_price": 500,
+            "pro_image": "/media/imgs/frames/DNW_92023_R500_C1_i1.jpg",
             "pro_images": [
-              "/media/imgs/frames/first_time__5E201_C2_i1.jpg",
-              "/media/imgs/frames/first_time__5E201_C2_i2.jpg",
-              "/media/imgs/frames/first_time__5E201_C2_i3.jpg",
-              "/media/imgs/frames/first_time__5E201_C2_i4.jpg"
+              "/media/imgs/frames/DNW_92023_R500_C1_i1.jpg",
+              "/media/imgs/frames/DNW_92023_R500_C1_i2.jpg",
+              "/media/imgs/frames/DNW_92023_R500_C1_i3.jpg",
+              "/media/imgs/frames/DNW_92023_R500_C1_i4.jpg"
             ],
             "pro_style": "full_frame",
             "pro_color": "grey",
@@ -1029,41 +1027,41 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "round",
             "pro_rating": 4.6,
-            "pro_gender": "kids",
+            "pro_gender": "men",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "dnw"
         },
         {                   
             "pro_id": 1050,
-            "pro_name": "First time 5E201",
-            "pro_price": 450,
-            "pro_image": "/media/imgs/frames/first_time__5E201_C1_i1.jpg",
+            "pro_name": "DNW 92023",
+            "pro_price": 500,
+            "pro_image": "/media/imgs/frames/DNW_92023_R500_C2_i1.jpg",
             "pro_images": [
-              "/media/imgs/frames/first_time__5E201_C3_i1.jpg",
-              "/media/imgs/frames/first_time__5E201_C3_i2.jpg",
-              "/media/imgs/frames/first_time__5E201_C3_i3.jpg",
-              "/media/imgs/frames/first_time__5E201_C3_i4.jpg"
+              "/media/imgs/frames/DNW_92023_R500_C2_i1.jpg",
+              "/media/imgs/frames/DNW_92023_R500_C2_i2.jpg",
+              "/media/imgs/frames/DNW_92023_R500_C2_i3.jpg",
+              "/media/imgs/frames/DNW_92023_R500_C2_i4.jpg"
             ],
             "pro_style": "full_frame",
             "pro_color": "grey",
             "pro_size": "M",
             "pro_material": "Fiber",
             "pro_shape": "square",
-            "pro_rating": 4.6,
-            "pro_gender": "kids",
+            "pro_rating": 4.8,
+            "pro_gender": "men",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "dnw"
         },
         {           
             "pro_id": 1051,
-            "pro_name": "First time 5E209",
-            "pro_price": 450,
-            "pro_image": "/media/imgs/frames/first_time__5E209_C1_i1.jpg",
+            "pro_name": "dnw 92023",
+            "pro_price": 500,
+            "pro_image": "/media/imgs/frames/DNW_92023_R500_C3_i1.jpg",
             "pro_images": [
-              "/media/imgs/frames/first_time__5E209_C1_i1.jpg",
-              "/media/imgs/frames/first_time__5E209_C1_i2.jpg",
-              "/media/imgs/frames/first_time__5E209_C1_i3.jpg",
-              "/media/imgs/frames/first_time__5E209_C1_i4.jpg"
+              "/media/imgs/frames/DNW_92023_R500_C3_i1.jpg",
+              "/media/imgs/frames/DNW_92023_R500_C3_i2.jpg",
+              "/media/imgs/frames/DNW_92023_R500_C3_i3.jpg",
+              "/media/imgs/frames/DNW_92023_R500_C3_i4.jpg"
             ],
             "pro_style": "full_frame",
             "pro_color": "grey",
@@ -1071,30 +1069,30 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "round",
             "pro_rating": 4.6,
-            "pro_gender": "kids",
+            "pro_gender": "men",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "dnw"
         },
         {           
             "pro_id": 1052,
-            "pro_name": "First time 5E209",
-            "pro_price": 450,
-            "pro_image": "/media/imgs/frames/first_time__5E209_C1_i1.jpg",
+            "pro_name": "DNW 92023",
+            "pro_price": 500,
+            "pro_image": "/media/imgs/frames/DNW_92023_R500_C3_i1.jpg",
             "pro_images": [
-              "/media/imgs/frames/first_time__5E209_i1.jpg",
-              "/media/imgs/frames/first_time__5E209_i2.jpg",
-              "/media/imgs/frames/first_time__5E209_i3.jpg",
-              "/media/imgs/frames/first_time__5E209_i4.jpg"
+              "/media/imgs/frames/DNW_92023_R500_C3_i1.jpg",
+              "/media/imgs/frames/DNW_92023_R500_C3_i2.jpg",
+              "/media/imgs/frames/DNW_92023_R500_C3_i3.jpg",
+              "/media/imgs/frames/DNW_92023_R500_C3_i4.jpg"
             ],
             "pro_style": "full_frame",
             "pro_color": "grey",
             "pro_size": "M",
             "pro_material": "Fiber",
             "pro_shape": "round",
-            "pro_rating": 4.6,
-            "pro_gender": "kids",
+            "pro_rating": 4.7,
+            "pro_gender": "women",
             "pro_category" : "frames",
-            "pro_brand": "first_time"
+            "pro_brand": "dnw"
         },
         {           
             "pro_id": 1053,
@@ -1330,7 +1328,7 @@ data = {
         {           
             "pro_id": 1064,
             "pro_name": "Leobreeze t002",
-            "pro_price": 950,
+            "pro_price": 260,
             "pro_image": "/media/imgs/frames/Leobreeze_t002_C1_i1.jpg",
             "pro_images": [
               "/media/imgs/frames/Leobreeze_t002_C1_i1.jpg",
@@ -1371,14 +1369,14 @@ data = {
         },
         {           
             "pro_id": 1066,
-            "pro_name": "Leobreeze t003",
-            "pro_price": 950,
-            "pro_image": "/media/imgs/frames/Leobreeze_t003_C2_i1.jpg",
+            "pro_name": "DNW 92023 C4",
+            "pro_price": 500,
+            "pro_image": "/media/imgs/frames/DNW_92023_R500_C4_i1.jpg",
             "pro_images": [
-              "/media/imgs/frames/Leobreeze_t003_C2_i1.jpg",
-              "/media/imgs/frames/Leobreeze_t003_C2_i2.jpg",
-              "/media/imgs/frames/Leobreeze_t003_C2_i3.jpg",
-              "/media/imgs/frames/Leobreeze_t003_C2_i4.jpg"
+              "/media/imgs/frames/DNW_92023_R500_C4_i1.jpg",
+              "/media/imgs/frames/DNW_92023_R500_C4_i2.jpg",
+              "/media/imgs/frames/DNW_92023_R500_C4_i3.jpg",
+              "/media/imgs/frames/DNW_92023_R500_C4_i4.jpg"
             ],
             "pro_style": "full_frame",
             "pro_color": "grey",
@@ -1388,7 +1386,7 @@ data = {
             "pro_rating": 4.8,
             "pro_gender": "men",
             "pro_category" : "frames",
-            "pro_brand": "leobreeze"
+            "pro_brand": "dnw"
         },
         {           
             "pro_id": 1067,
@@ -1582,7 +1580,7 @@ data = {
         {           
             "pro_id": 1076,
             "pro_name": "YJ 0169",
-            "pro_price": 949,
+            "pro_price": 850,
             "pro_image": "/media/imgs/frames/yj_0169_C1_i1.jpg",
             "pro_images": [
               "/media/imgs/frames/yj_0169_C1_i1.jpg",
@@ -1603,7 +1601,7 @@ data = {
         {           
             "pro_id": 1077,
             "pro_name": "YJ 0187",
-            "pro_price": 949,
+            "pro_price": 1250,
             "pro_image": "/media/imgs/frames/yj_0187_C1_i1.jpg",
             "pro_images": [
               "/media/imgs/frames/yj_0187_C1_i1.jpg",
