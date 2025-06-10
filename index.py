@@ -1738,7 +1738,7 @@ data = {
          },
          {
             "pro_id": 1085,
-            "pro_name": "Enfys RLT5897 C4",
+            "pro_name": "farenhiet RLT5897 C4",
             "pro_price": 1300,
             "pro_image": "/media/imgs/frames/VF_FA5201_C4_1300.jpg",
             "pro_images": [
