@@ -1,28 +1,44 @@
-import React, { useState } from 'react';
-import Prods from '../pro2.json';
+import React, { useState, useEffect } from 'react';
 import ProductCard from './ProductCard';
 
 const WomenFrames = () => {
+  const [frames, setFrames] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [priceFilter, setPriceFilter] = useState("all");
   const [styleFilter, setStyleFilter] = useState("all");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Fetch data on mount
+  useEffect(() => {
+    const fetchFrames = async () => {
+      try {
+        setLoading(true);
+        const res = await fetch("https://netramoptics.onrender.com/fetchData");
+        if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
+        const data = await res.json();
+        setFrames(data.frames || []);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFrames();
+  }, []);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
   const getFilteredFrames = () => {
-    if (!Prods.frames || !Array.isArray(Prods.frames)) {
-      console.warn("No 'frames' array found in pro2.json");
-      return [];
-    }
-
-    return Prods.frames.filter((frame) => {
+    return frames.filter((frame) => {
       const price = Number(frame.pro_price);
       const style = frame.pro_style?.toLowerCase();
       const gender = frame.pro_gender?.toLowerCase();
 
-      // Force gender to 'women' only
+      // Only "women" frames
       const genderCheck = gender === 'women';
       const styleCheck = styleFilter === 'all' || style === styleFilter;
 
@@ -41,13 +57,12 @@ const WomenFrames = () => {
     });
   };
 
+  const filteredFrames = getFilteredFrames();
+
   return (
     <div className="min-h-screen w-full flex bg-gray-100 transition-all duration-300">
       {/* Sidebar */}
-      <div
-        className={`fixed top-0 left-0 h-screen w-1/4 max-md:w-[100vw] bg-gray-900 shadow-md z-30 transition-all duration-300 transform
-          ${sidebarOpen ? 'translate-x-0 opacity-100 pointer-events-auto' : '-translate-x-full opacity-0 pointer-events-none'}`}
-      >
+      <div className={`fixed top-0 left-0 h-screen w-1/4 max-md:w-full bg-gray-900 shadow-md z-30 transition-all duration-300 transform ${sidebarOpen ? 'translate-x-0 opacity-100 pointer-events-auto' : '-translate-x-full opacity-0 pointer-events-none'}`}>
         <div className="p-4">
           <div className="absolute top-4 right-4 z-40">
             <button
@@ -66,10 +81,7 @@ const WomenFrames = () => {
               <button
                 key={range}
                 onClick={() => setPriceFilter(range)}
-                className={`px-4 py-2 rounded-full border font-semibold transition duration-300
-                  ${priceFilter === range
-                    ? 'bg-red-600 text-white border-red-600'
-                    : 'bg-gray-800 text-gray-200 border-gray-600 hover:bg-gray-700'}`}
+                className={`px-4 py-2 rounded-full border font-semibold transition duration-300 ${priceFilter === range ? 'bg-red-600 text-white border-red-600' : 'bg-gray-800 text-gray-200 border-gray-600 hover:bg-gray-700'}`}
               >
                 {range === 'all' ? 'All' : `₹${range.replace('-', ' - ₹')}`}
               </button>
@@ -83,10 +95,7 @@ const WomenFrames = () => {
               <button
                 key={style}
                 onClick={() => setStyleFilter(style)}
-                className={`px-4 py-2 rounded-full border font-semibold transition duration-300
-                  ${styleFilter === style
-                    ? 'bg-red-600 text-white border-red-600'
-                    : 'bg-gray-800 text-gray-200 border-gray-600 hover:bg-gray-700'}`}
+                className={`px-4 py-2 rounded-full border font-semibold transition duration-300 ${styleFilter === style ? 'bg-red-600 text-white border-red-600' : 'bg-gray-800 text-gray-200 border-gray-600 hover:bg-gray-700'}`}
               >
                 {style === 'all' ? 'All' : style.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
               </button>
@@ -96,7 +105,7 @@ const WomenFrames = () => {
       </div>
 
       {/* Product Section */}
-      <div className={`flex-1 flex max-md:mt-20 flex-col items-center py-4 transition-all duration-300`}>
+      <div className="flex-1 flex max-md:mt-20 flex-col items-center py-4 transition-all duration-300">
         {!sidebarOpen && (
           <div className="w-full fixed z-10 left-2 max-md:top-22 flex justify-start mb-4">
             <button
@@ -109,11 +118,19 @@ const WomenFrames = () => {
           </div>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10 px-4">
-          {getFilteredFrames().map((frame) => (
-            <ProductCard key={frame.pro_id} product={frame} />
-          ))}
-        </div>
+        {loading ? (
+          <h4 className="text-center text-gray-600">Loading...</h4>
+        ) : error ? (
+          <p className="text-center text-red-600">Error: {error}</p>
+        ) : filteredFrames.length === 0 ? (
+          <p className="text-gray-500 text-center mt-4">No products match the selected filters.</p>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10 px-4">
+            {filteredFrames.map((frame) => (
+              <ProductCard key={frame.pro_id} product={frame} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
