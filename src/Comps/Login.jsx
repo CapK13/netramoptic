@@ -6,11 +6,11 @@ const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(null); // true for success, false for error
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  // This gets the page the user was trying to access (e.g., "/checkout")
   const from = location.state?.from || '/profile';
 
   const handleLogin = async (e) => {
@@ -25,18 +25,18 @@ const Login = ({ onLogin }) => {
       const user = res.data;
       const token = res.data.token;
 
-      // Save auth details
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
 
       setMessage('Login successful.');
+      setIsSuccess(true);
       onLogin && onLogin(user);
 
-      // Redirect to the intended page
       navigate(from, { replace: true });
     } catch (err) {
       console.error('Login failed:', err);
       setMessage(err.response?.data?.message || 'Login failed.');
+      setIsSuccess(false);
     }
   };
 
@@ -66,7 +66,15 @@ const Login = ({ onLogin }) => {
         >
           Login
         </button>
-        {message && <p className="text-center text-sm text-red-500">{message}</p>}
+        {message && (
+          <p
+            className={`text-center text-sm mt-2 ${
+              isSuccess ? 'text-green-500' : 'text-red-500'
+            }`}
+          >
+            {message}
+          </p>
+        )}
       </form>
     </div>
   );

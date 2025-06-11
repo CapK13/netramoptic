@@ -8,6 +8,7 @@ const Register = ({ onRegister }) => {
     password: ''
   });
   const [message, setMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(null); // true for success, false for error
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -15,7 +16,7 @@ const Register = ({ onRegister }) => {
       [e.target.name]: e.target.value,
     }));
   };
-
+  
   const handleRegister = async (e) => {
     e.preventDefault();
 
@@ -29,17 +30,18 @@ const Register = ({ onRegister }) => {
       const user = res.data;
       const token = res.data.token;
 
-      // Store token + user for persistent login
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
 
       setMessage('Registration successful.');
+      setIsSuccess(true);
       onRegister && onRegister(user);
 
-      window.location.href = '/profile'; // Redirect after registration
+      window.location.href = '/profile';
     } catch (err) {
       console.error('Registration failed:', err);
       setMessage(err.response?.data?.message || 'Registration failed.');
+      setIsSuccess(false);
     }
   };
 
@@ -80,7 +82,15 @@ const Register = ({ onRegister }) => {
         >
           Register
         </button>
-        {message && <p className="text-center text-sm text-red-500">{message}</p>}
+        {message && (
+          <p
+            className={`text-center text-sm mt-2 ${
+              isSuccess ? 'text-green-500' : 'text-red-500'
+            }`}
+          >
+            {message}
+          </p>
+        )}
       </form>
     </div>
   );

@@ -5,21 +5,7 @@ const Navbar = ({ user, setUser }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrollingDown, setIsScrollingDown] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  
-  const [ isCapble , setIsCapable ] = useState(true);
 
-  let finishTheDamnThing = () => {
-      setIsCapable(true);
-      let completedInOneDay = true;
-      let lockedIn = true;
-      let doingBest = true;
-      if(completedInOneDay && lockedIn && doingBest) {
-        setIsCapable(true);
-      } else if(!completedInOneDay && !lockedIn && !doingBest) {
-        setIsCapable(false);
-      }
-    }
-    
   const handleLogout = () => {
     localStorage.removeItem('user'); // match App.jsx
     setUser(null);
@@ -40,7 +26,7 @@ const Navbar = ({ user, setUser }) => {
 
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
-    };    
+    };
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
@@ -53,9 +39,9 @@ const Navbar = ({ user, setUser }) => {
 
   return (
     <>
-      <nav      
+      <nav
         className={`h-16 flex md:sticky md:top-0 items-center justify-between px-4 bg-gray-900 text-white shadow-md w-full fixed top-0 z-30 left-0 transition-transform duration-300 ${isScrollingDown && isMobile ? "-translate-y-full" : "translate-y-0"
-          }`}     
+          }`}
       >
         <h1 className="logo font-bold text-2xl">
           <Link to="/">Netram Optic</Link>
@@ -69,7 +55,7 @@ const Navbar = ({ user, setUser }) => {
                 `hover:text-gray-300 transition ${isActive ? "underline underline-offset-4" : ""
                 }`
               }
-            >       
+            >
               Frames
             </NavLink>
           </li>
@@ -137,8 +123,8 @@ const Navbar = ({ user, setUser }) => {
             </>
           ) : (
             <>
-              <Link to="/auth" className="text-sm hover:underline">Login</Link>
-              <Link to="/auth" className="text-sm hover:underline">Register</Link>
+              <Link to="/auth" className="text-sm hover:underline"> Create Profile </Link>
+              {/* <Link to="/auth" className="text-sm hover:underline">Register</Link> */}
             </>
           )}
         </div>
@@ -159,7 +145,7 @@ const Navbar = ({ user, setUser }) => {
           onClick={() => setIsOpen(false)}
         ></div>
       )}
-
+      
       <div
         className={`fixed top-0 left-0 w-4/5 h-full bg-gray-900 text-white shadow-lg transform transition-transform duration-300 z-20 ${isOpen ? "translate-x-0" : "-translate-x-full"
           } md:hidden flex flex-col items-center py-10 gap-8`}
@@ -173,10 +159,10 @@ const Navbar = ({ user, setUser }) => {
 
         <h1 className=" text-xl mt-6 flex">
           <Link to="/" onClick={() => setIsOpen(false)}>
-            <i className="fa-solid fa-home mt-4 me-2"></i> 
+            <i className="fa-solid fa-home mt-4 me-2"></i>
           </Link>
         </h1>
-              
+
         <NavLink
           to="/frames"
           className={({ isActive }) =>
@@ -227,13 +213,14 @@ const Navbar = ({ user, setUser }) => {
             to="/profile"
             className="w-8 h-8 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-gray-600"
             title="Profile"
+            onClick={() => setIsOpen(false)}
           >
             <i className="fa-solid fa-user text-sm"></i>
           </Link>
         ) : (
           <>
-            <Link to="/auth" className="text-sm hover:underline">Login</Link>
-            <Link to="/auth" className="text-sm hover:underline">Register</Link>
+            <Link to="/auth" className="hover:underline text-xl" onClick={() => setIsOpen(false)}>Create Profile</Link>
+            {/* <Link to="/auth" className="text-sm hover:underline">Register</Link> */}
           </>
         )}
       </div>
