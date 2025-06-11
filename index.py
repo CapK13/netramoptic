@@ -71,7 +71,7 @@ data = {
         {
             "pro_id": 1004,
             "pro_name": "Fashion hunt 9104",
-            "pro_price": 600,
+            "pro_price": 400,
             "pro_image": "/media/imgs/frames/Fashionhunt_9104_C1_i1.jpg",
             "pro_images": [
                 "/media/imgs/frames/Fashionhunt_9104_C1_i1.jpg",

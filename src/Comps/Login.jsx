@@ -10,7 +10,7 @@ const Login = ({ onLogin }) => {
 
   const navigate = useNavigate();
   const location = useLocation();
-
+  
   const from = location.state?.from || '/profile';
 
   const handleLogin = async (e) => {
