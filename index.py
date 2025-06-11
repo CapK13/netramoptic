@@ -376,7 +376,7 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "round",
             "pro_rating": 4.9,
-            "pro_gender": "women",
+            "pro_gender": "kids",
             "pro_category" : "frames",
             "pro_brand": "bubbles_mini"
         },
@@ -481,7 +481,7 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "ractangle",
             "pro_rating": 4.7,
-            "pro_gender": "women",
+            "pro_gender": "kids",
             "pro_category" : "frames",
             "pro_brand": "leo_mini"
         },
@@ -523,14 +523,14 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "round",
             "pro_rating": 4.7,
-            "pro_gender": "women",
+            "pro_gender": "kids",
             "pro_category" : "frames",
             "pro_brand": "revio"
         },
         {
             "pro_id": 1026,
             "pro_name": "Tomhardy 935202",
-            "pro_price": 599,
+            "pro_price": 400,
             "pro_image": "/media/imgs/frames/Tomhardy_935202_i1.jpg",
             "pro_images": [
               "/media/imgs/frames/Tomhardy_935202_i1.jpg",
@@ -544,7 +544,7 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "round",
             "pro_rating": 4.7,
-            "pro_gender": "women",
+            "pro_gender": "kids",
             "pro_category" : "frames",
             "pro_brand": "tomhardy"
         },
@@ -565,7 +565,7 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "round",
             "pro_rating": 4.7,
-            "pro_gender": "women",
+            "pro_gender": "kids",
             "pro_category" : "frames",
             "pro_brand": "tomhardy"
         },
@@ -586,7 +586,7 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "round",
             "pro_rating": 4.8,
-            "pro_gender": "women",
+            "pro_gender": "kids",
             "pro_category" : "frames",
             "pro_brand": "tomhardy"
         },
@@ -607,7 +607,7 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "round",
             "pro_rating": 4.8,
-            "pro_gender": "women",
+            "pro_gender": "kids",
             "pro_category" : "frames",
             "pro_brand": "tomhardy"
         },
@@ -628,7 +628,7 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "round",
             "pro_rating": 4.8,
-            "pro_gender": "women",
+            "pro_gender": "kids",
             "pro_category" : "frames",
             "pro_brand": "tomhardy"
         },
@@ -649,7 +649,7 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "round",
             "pro_rating": 4.8,
-            "pro_gender": "women",
+            "pro_gender": "kids",
             "pro_category" : "frames",
             "pro_brand": "tomhardy"
         },
@@ -670,7 +670,7 @@ data = {
             "pro_material": "metal",
             "pro_shape": "ractangle",
             "pro_rating": 4.8,
-            "pro_gender": "women",
+            "pro_gender": "kids",
             "pro_category" : "frames",
             "pro_brand": "tomhardy"
         },
@@ -1027,11 +1027,11 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "round",
             "pro_rating": 4.6,
-            "pro_gender": "men",
+            "pro_gender": "women",
             "pro_category" : "frames",
             "pro_brand": "dnw"
         },
-        {                   
+        {            
             "pro_id": 1050,
             "pro_name": "DNW 92023",
             "pro_price": 500,
@@ -1048,7 +1048,7 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "square",
             "pro_rating": 4.8,
-            "pro_gender": "men",
+            "pro_gender": "women",
             "pro_category" : "frames",
             "pro_brand": "dnw"
         },
@@ -1069,7 +1069,7 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "round",
             "pro_rating": 4.6,
-            "pro_gender": "men",
+            "pro_gender": "women",
             "pro_category" : "frames",
             "pro_brand": "dnw"
         },
@@ -1111,7 +1111,7 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "square",
             "pro_rating": 4.8,
-            "pro_gender": "men",
+            "pro_gender": "women",
             "pro_category" : "frames",
             "pro_brand": "firsttime"
         },
@@ -1132,7 +1132,7 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "round",
             "pro_rating": 4.7,
-            "pro_gender": "men",
+            "pro_gender": "women",
             "pro_category" : "frames",
             "pro_brand": "firsttime"
         },
@@ -1153,7 +1153,7 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "round",
             "pro_rating": 4.7,
-            "pro_gender": "men",
+            "pro_gender": "women",
             "pro_category" : "frames",
             "pro_brand": "firsttime"
         },
@@ -1174,7 +1174,7 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "round",
             "pro_rating": 4.7,
-            "pro_gender": "men",
+            "pro_gender": "women",
             "pro_category" : "frames",
             "pro_brand": "firsttime"
         },
@@ -1349,7 +1349,7 @@ data = {
         {           
             "pro_id": 1065,
             "pro_name": "Leobreeze t003",
-            "pro_price": 950,
+            "pro_price": 380,
             "pro_image": "/media/imgs/frames/Leobreeze_t003_C1_i1.jpg",
             "pro_images": [
               "/media/imgs/frames/Leobreeze_t003_C1_i1.jpg",
@@ -1384,7 +1384,7 @@ data = {
             "pro_material": "Fiber",
             "pro_shape": "round",
             "pro_rating": 4.8,
-            "pro_gender": "men",
+            "pro_gender": "women",
             "pro_category" : "frames",
             "pro_brand": "dnw"
         },
@@ -1412,7 +1412,7 @@ data = {
         {           
             "pro_id": 1068,
             "pro_name": "Tagline 88043",
-            "pro_price": 450,
+            "pro_price": 440,
             "pro_image": "/media/imgs/frames/Tagline_88043_C2_i1.jpg",
             "pro_images": [
               "/media/imgs/frames/Tagline_88043_C2_i1.jpg",
@@ -1454,7 +1454,7 @@ data = {
         {           
             "pro_id": 1070,
             "pro_name": "Tagline 88044",
-            "pro_price": 450,
+            "pro_price": 440,
             "pro_image": "/media/imgs/frames/Tagline_88044_C2_i1.jpg",
             "pro_images": [
               "/media/imgs/frames/Tagline_88044_C2_i1.jpg",
@@ -1963,7 +1963,7 @@ data = {
             "pro_size": "M",
             "pro_material": "fiber",
             "pro_shape": "round",
-            "pro_gender": "women",
+            "pro_gender": "men",
             "pro_category" : "frames",
             "pro_brand" : "knighthorse"
          },
@@ -4022,7 +4022,7 @@ def insert_data_to_mongodb():
         username = urllib.parse.quote_plus("vrajesh")
         password = urllib.parse.quote_plus("Cap123")
         mongo_uri = f"mongodb+srv://{username}:{password}@cluster0.iyga0yz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-        
+
         client = MongoClient(mongo_uri)
         db = client['netramoptics']
         frames_collection = db['frames']

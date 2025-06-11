@@ -14,7 +14,7 @@ const Navbar = ({ user, setUser }) => {
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
-
+    
     const handleScroll = () => {
       if (window.innerWidth < 768) {
         setIsScrollingDown(window.scrollY > lastScrollY);
@@ -117,7 +117,7 @@ const Navbar = ({ user, setUser }) => {
               <button
                 onClick={handleLogout}
                 className="text-sm :underline ml-2"
-              >
+              >     
                 Logout
               </button>
             </>
@@ -145,7 +145,7 @@ const Navbar = ({ user, setUser }) => {
           onClick={() => setIsOpen(false)}
         ></div>
       )}
-      
+
       <div
         className={`fixed top-0 left-0 w-4/5 h-full bg-gray-900 text-white shadow-lg transform transition-transform duration-300 z-20 ${isOpen ? "translate-x-0" : "-translate-x-full"
           } md:hidden flex flex-col items-center py-10 gap-8`}
