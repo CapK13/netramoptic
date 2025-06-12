@@ -5,16 +5,16 @@ const Navbar = ({ user, setUser }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrollingDown, setIsScrollingDown] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
+    
   const handleLogout = () => {
     localStorage.removeItem('user'); // match App.jsx
     setUser(null);
     window.location.href = '/auth'; // Redirect to login
-  };
+  };  
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
-    
+
     const handleScroll = () => {
       if (window.innerWidth < 768) {
         setIsScrollingDown(window.scrollY > lastScrollY);
@@ -23,7 +23,7 @@ const Navbar = ({ user, setUser }) => {
       }
       lastScrollY = window.scrollY;
     };
-    
+
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
