@@ -7,7 +7,7 @@ const Login = ({ onLogin }) => {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const [isSuccess, setIsSuccess] = useState(null); // true for success, false for error
-
+      
   const navigate = useNavigate();
   const location = useLocation();
   

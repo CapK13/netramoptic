@@ -51,7 +51,7 @@ const Raw7 = () => {
         return genderCheck && styleCheck && priceCheck;
       });
   };
-
+      
   return (
     <div className="min-h-screen w-full flex bg-gray-100 transition-all duration-300">
       {/* Sidebar */}

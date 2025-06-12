@@ -9,14 +9,14 @@ const Register = ({ onRegister }) => {
   });
   const [message, setMessage] = useState('');
   const [isSuccess, setIsSuccess] = useState(null); // true for success, false for error
-
+  
   const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
   };
-  
+
   const handleRegister = async (e) => {
     e.preventDefault();
 
@@ -29,7 +29,7 @@ const Register = ({ onRegister }) => {
 
       const user = res.data;
       const token = res.data.token;
-
+      
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
 

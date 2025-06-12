@@ -11,7 +11,7 @@ const Navbar = ({ user, setUser }) => {
     setUser(null);
     window.location.href = '/auth'; // Redirect to login
   };
-  
+
   useEffect(() => {
     let lastScrollY = window.scrollY;
     
@@ -23,7 +23,7 @@ const Navbar = ({ user, setUser }) => {
       }
       lastScrollY = window.scrollY;
     };
-
+    
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };

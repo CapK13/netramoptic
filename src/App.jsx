@@ -30,7 +30,7 @@ import PrivacyPolicy from './Comps/Footer_Comps/PrivacyPolicy'
 import AuthPage from './Pages/AuthPage';
 
 const App = () => {
-
+      
   const [user, setUser] = useState(null);
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -39,9 +39,9 @@ const App = () => {
       setUser(JSON.parse(storedUser));
     }
   }, []);
-
+  
   return (
-    <>
+    <>  
       <Navbar user={user} setUser={setUser} />
       <Routes>
         <Route path="/" element={<Home />} />
