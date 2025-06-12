@@ -5,7 +5,7 @@ const Navbar = ({ user, setUser }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrollingDown, setIsScrollingDown] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-    
+
   const handleLogout = () => {
     localStorage.removeItem('user'); // match App.jsx
     setUser(null);
@@ -130,7 +130,7 @@ const Navbar = ({ user, setUser }) => {
         </div>
       </nav>
 
-      {!isOpen && (
+      {!isOpen && (     
         <button
           className="md:hidden fixed top-2 right-2 text-2xl bg-gray-900 text-white p-2 rounded-lg shadow-lg z-30"
           onClick={() => setIsOpen(true)}
@@ -138,14 +138,14 @@ const Navbar = ({ user, setUser }) => {
           <i className="fa-solid fa-bars"></i>
         </button>
       )}
-
+  
       {isOpen && (
         <div
           className="fixed inset-0 bg-black opacity-50 z-10"
           onClick={() => setIsOpen(false)}
         ></div>
       )}
-
+      
       <div
         className={`fixed top-0 left-0 w-4/5 h-full bg-gray-900 text-white shadow-lg transform transition-transform duration-300 z-20 ${isOpen ? "translate-x-0" : "-translate-x-full"
           } md:hidden flex flex-col items-center py-10 gap-8`}
@@ -156,7 +156,7 @@ const Navbar = ({ user, setUser }) => {
         >
           <i className="fa-solid fa-xmark"></i>
         </button>
-
+          
         <h1 className=" text-xl mt-6 flex">
           <Link to="/" onClick={() => setIsOpen(false)}>
             <i className="fa-solid fa-home mt-4 me-2"></i>
