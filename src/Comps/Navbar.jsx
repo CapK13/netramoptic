@@ -145,18 +145,18 @@ const Navbar = ({ user, setUser }) => {
           onClick={() => setIsOpen(false)}
         ></div>
       )}
-      
+            
       <div
         className={`fixed top-0 left-0 w-4/5 h-full bg-gray-900 text-white shadow-lg transform transition-transform duration-300 z-20 ${isOpen ? "translate-x-0" : "-translate-x-full"
           } md:hidden flex flex-col items-center py-10 gap-8`}
-      >
+      > 
         <button
           className="absolute top-6 right-6 text-3xl"
           onClick={() => setIsOpen(false)}
         >
           <i className="fa-solid fa-xmark"></i>
         </button>
-          
+
         <h1 className=" text-xl mt-6 flex">
           <Link to="/" onClick={() => setIsOpen(false)}>
             <i className="fa-solid fa-home mt-4 me-2"></i>
