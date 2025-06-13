@@ -11,6 +11,7 @@ const Kyaans = () => {
   const [genderFilter, setGenderFilter] = useState('all');
   const [priceFilter, setPriceFilter] = useState('all');
   const [styleFilter, setStyleFilter] = useState('all');
+  const [loading, setLoading] = useState(true); // <-- Added loading state
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
   const loadMore = () => setVisibleCount((prev) => prev + 6);
@@ -18,6 +19,7 @@ const Kyaans = () => {
   useEffect(() => {
     const fetchFrames = async () => {
       try {
+        setLoading(true); // <-- Start loading
         const res = await fetch('https://netramoptics.onrender.com/fetchData');
         const data = await res.json();
         const kyaansFrames = data.frames?.filter(
@@ -26,6 +28,8 @@ const Kyaans = () => {
         setFrames(kyaansFrames || []);
       } catch (error) {
         console.error('Error fetching frames:', error);
+      } finally {
+        setLoading(false); // <-- End loading
       }
     };
     fetchFrames();
@@ -138,20 +142,26 @@ const Kyaans = () => {
           </div>
         )}
 
-        <h1 className="text-2xl font-bold mb-4 text-gray-800">Kyaans Collection</h1>
+        {loading ? (
+          <h2 className="text-lg font-semibold text-gray-600 mt-10">Loading...</h2>
+        ) : (
+          <>
+            <h1 className="text-2xl font-bold mb-4 text-gray-800">Kyaans Collection</h1>
 
-        <InfiniteScroll
-          dataLength={visibleCount}
-          next={loadMore}
-          hasMore={visibleCount < filteredFrames.length}
-          loader={<h4 className="text-center text-gray-600">Loading...</h4>}
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10 px-4">
-            {filteredFrames.slice(0, visibleCount).map((frame) => (
-              <ProductCard key={frame.pro_id} product={frame} />
-            ))}
-          </div>
-        </InfiniteScroll>
+            <InfiniteScroll
+              dataLength={visibleCount}
+              next={loadMore}
+              hasMore={visibleCount < filteredFrames.length}
+              loader={<h4 className="text-center text-gray-600">Loading...</h4>}
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10 px-4">
+                {filteredFrames.slice(0, visibleCount).map((frame) => (
+                  <ProductCard key={frame.pro_id} product={frame} />
+                ))}
+              </div>
+            </InfiniteScroll>
+          </>
+        )}
       </div>
     </div>
   );

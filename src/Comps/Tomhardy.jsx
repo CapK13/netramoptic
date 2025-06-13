@@ -4,6 +4,7 @@ import ProductCard from './ProductCard';
 
 const Tomhardy = () => {
   const [frames, setFrames] = useState([]);
+  const [filteredFrames, setFilteredFrames] = useState([]);
   const [visibleCount, setVisibleCount] = useState(9);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -14,44 +15,48 @@ const Tomhardy = () => {
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
   const loadMore = () => setVisibleCount((prev) => prev + 6);
 
+  // Fetch and filter brand-specific frames on mount
   useEffect(() => {
-    fetch('https://netramoptics.onrender.com/fetchData')
-      .then((res) => res.json())
-      .then((data) => {
-        if (Array.isArray(data)) {
-          setFrames(data);
-        } else {
-          console.warn("Expected an array of frames from API");
-        }
-      })
-      .catch((err) => console.error("API fetch error:", err));
+    const fetchFrames = async () => {
+      try {
+        const res = await fetch('https://netramoptics.onrender.com/fetchData');
+        const data = await res.json();
+        const tomhardyFrames = data.frames?.filter(
+          (frame) => frame.pro_brand?.toLowerCase() === 'tomhardy'
+        );
+        setFrames(tomhardyFrames || []);
+      } catch (error) {
+        console.error('Error fetching frames:', error);
+      }
+    };
+    fetchFrames();
   }, []);
 
-  const getFilteredFrames = () => {
-    return frames
-      .filter((frame) => frame.pro_brand?.toLowerCase() === 'tomhardy')
-      .filter((frame) => {
-        const price = Number(frame.pro_price);
-        const style = frame.pro_style?.toLowerCase();
-        const gender = frame.pro_gender?.toLowerCase();
+  // Filter frames based on current filters
+  useEffect(() => {
+    const filtered = frames.filter((frame) => {
+      const price = Number(frame.pro_price);
+      const style = frame.pro_style?.toLowerCase();
+      const gender = frame.pro_gender?.toLowerCase();
 
-        const genderCheck = genderFilter === 'all' || gender === genderFilter;
-        const styleCheck = styleFilter === 'all' || style === styleFilter;
+      const genderCheck = genderFilter === 'all' || gender === genderFilter;
+      const styleCheck = styleFilter === 'all' || style === styleFilter;
 
-        const priceCheck = (() => {
-          switch (priceFilter) {
-            case '0-500': return price <= 500;
-            case '501-1000': return price > 500 && price <= 1000;
-            case '1001-3000': return price > 1000 && price <= 3000;
-            case '3001-5000': return price > 3000 && price <= 5000;
-            case '5000+': return price > 5000;
-            default: return true;
-          }
-        })();
+      const priceCheck = (() => {
+        switch (priceFilter) {
+          case '0-500': return price <= 500;
+          case '501-1000': return price > 500 && price <= 1000;
+          case '1001-3000': return price > 1000 && price <= 3000;
+          case '3001-5000': return price > 3000 && price <= 5000;
+          case '5000+': return price > 5000;
+          default: return true;
+        }
+      })();
 
-        return genderCheck && priceCheck && styleCheck;
-      });
-  };
+      return genderCheck && priceCheck && styleCheck;
+    });
+    setFilteredFrames(filtered);
+  }, [frames, genderFilter, priceFilter, styleFilter]);
 
   return (
     <div className="min-h-screen w-full flex bg-gray-100 transition-all duration-300">
@@ -128,15 +133,13 @@ const Tomhardy = () => {
         <InfiniteScroll
           dataLength={visibleCount}
           next={loadMore}
-          hasMore={visibleCount < getFilteredFrames().length}
+          hasMore={visibleCount < filteredFrames.length}
           loader={<h4 className="text-center text-gray-600">Loading...</h4>}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10 px-4">
-            {getFilteredFrames()
-              .slice(0, visibleCount)
-              .map((frame) => (
-                <ProductCard key={frame.pro_id} product={frame} />
-              ))}
+            {filteredFrames.slice(0, visibleCount).map((frame) => (
+              <ProductCard key={frame.pro_id} product={frame} />
+            ))}
           </div>
         </InfiniteScroll>
       </div>

@@ -90,7 +90,7 @@ const Enfys = () => {
               </button>
             ))}
           </div>
-
+            
           <h2 className="text-xl font-bold mb-4 text-white">Price</h2>
           <div className="flex flex-wrap gap-3 mb-6">
             {['all', '0-500', '501-1000', '1001-3000', '3001-5000', '5000+'].map((range) => (

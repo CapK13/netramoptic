@@ -9,6 +9,7 @@ const Knighthorse = () => {
   const [priceFilter, setPriceFilter] = useState('all');
   const [styleFilter, setStyleFilter] = useState('all');
   const [visibleCount, setVisibleCount] = useState(9);
+  const [loading, setLoading] = useState(true); // 🆕 loading state
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
   const loadMore = () => setVisibleCount((prev) => prev + 6);
@@ -24,6 +25,8 @@ const Knighthorse = () => {
         setFrames(knighthorseFrames || []);
       } catch (error) {
         console.error('Error fetching frames:', error);
+      } finally {
+        setLoading(false); // 🆕 stop loading after fetch
       }
     };
 
@@ -137,20 +140,24 @@ const Knighthorse = () => {
 
         <h1 className="text-2xl font-bold mb-4 text-gray-800">Knighthorse Collection</h1>
 
-        <InfiniteScroll
-          dataLength={visibleCount}
-          next={loadMore}
-          hasMore={visibleCount < getFilteredFrames().length}
-          loader={<h4 className="text-center text-gray-600">Loading...</h4>}
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10 px-4">
-            {getFilteredFrames()
-              .slice(0, visibleCount)
-              .map((frame) => (
-                <ProductCard key={frame.pro_id} product={frame} />
-              ))}
-          </div>
-        </InfiniteScroll>
+        {loading ? ( // 🆕 Show loading message initially
+          <div className="text-center text-gray-600 mt-10">Loading products...</div>
+        ) : (
+          <InfiniteScroll
+            dataLength={visibleCount}
+            next={loadMore}
+            hasMore={visibleCount < getFilteredFrames().length}
+            loader={<h4 className="text-center text-gray-600">Loading...</h4>}
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10 px-4">
+              {getFilteredFrames()
+                .slice(0, visibleCount)
+                .map((frame) => (
+                  <ProductCard key={frame.pro_id} product={frame} />
+                ))}
+            </div>
+          </InfiniteScroll>
+        )}
       </div>
     </div>
   );
