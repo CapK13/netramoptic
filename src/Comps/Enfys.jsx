@@ -9,6 +9,7 @@ const Enfys = () => {
   const [priceFilter, setPriceFilter] = useState('all');
   const [styleFilter, setStyleFilter] = useState('all');
   const [visibleCount, setVisibleCount] = useState(9);
+  const [loading, setLoading] = useState(true);
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
   const loadMore = () => setVisibleCount((prev) => prev + 6);
@@ -24,6 +25,8 @@ const Enfys = () => {
         setFrames(enfysFrames || []);
       } catch (error) {
         console.error('Error fetching Enfys frames:', error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -136,22 +139,27 @@ const Enfys = () => {
           </div>
         )}
 
-        <h1 className="text-2xl font-bold mb-4 text-gray-800">Enfys Collection</h1>
-
-        <InfiniteScroll
-          dataLength={visibleCount}
-          next={loadMore}
-          hasMore={visibleCount < getFilteredFrames().length}
-          loader={<h4 className="text-center text-gray-600">Loading...</h4>}
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10 px-4">
-            {getFilteredFrames()
-              .slice(0, visibleCount)
-              .map((frame) => (
-                <ProductCard key={frame.pro_id} product={frame} />
-              ))}
-          </div>
-        </InfiniteScroll>
+        {loading ? (
+          <h2 className="text-lg font-semibold text-gray-600 mt-10">Loading...</h2>
+        ) : (
+          <>
+            <h1 className="text-2xl font-bold mb-4 text-gray-800">Enfys Collection</h1>
+            <InfiniteScroll
+              dataLength={visibleCount}
+              next={loadMore}
+              hasMore={visibleCount < getFilteredFrames().length}
+              loader={<h4 className="text-center text-gray-600">Loading...</h4>}
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10 px-4">
+                {getFilteredFrames()
+                  .slice(0, visibleCount)
+                  .map((frame) => (
+                    <ProductCard key={frame.pro_id} product={frame} />
+                  ))}
+              </div>
+            </InfiniteScroll>
+          </>
+        )}
       </div>
     </div>
   );
