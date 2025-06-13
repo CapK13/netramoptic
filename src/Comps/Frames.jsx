@@ -3,6 +3,14 @@ import ProductCard from './ProductCard';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Footer from './Footer';
 
+// Shuffle helper function
+const shuffleArray = (array) => {
+  return array
+    .map((item) => ({ item, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ item }) => item);
+};
+
 const Frames = () => {
   const [frames, setFrames] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -21,7 +29,8 @@ const Frames = () => {
         const response = await fetch(`https://netramoptics.onrender.com/fetchData`);
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
         const data = await response.json();
-        setFrames(data.frames || []);
+        const shuffledFrames = shuffleArray(data.frames || []);
+        setFrames(shuffledFrames);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -163,7 +172,7 @@ const Frames = () => {
           </InfiniteScroll>
         )}
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );
