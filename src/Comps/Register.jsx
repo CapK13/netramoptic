@@ -9,14 +9,14 @@ const Register = ({ onRegister }) => {
   });
   const [message, setMessage] = useState('');
   const [isSuccess, setIsSuccess] = useState(null); // true for success, false for error
-      
+
   const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
   };
-
+    
   const handleRegister = async (e) => {
     e.preventDefault();
 

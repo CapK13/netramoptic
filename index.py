@@ -1054,7 +1054,7 @@ data = {
         },
         {           
             "pro_id": 1051,
-            "pro_name": "dnw 92023",
+            "pro_name": "DNW 92023",
             "pro_price": 500,
             "pro_image": "/media/imgs/frames/DNW_92023_R500_C3_i1.jpg",
             "pro_images": [
@@ -1075,24 +1075,24 @@ data = {
         },
         {           
             "pro_id": 1052,
-            "pro_name": "DNW 92023",
-            "pro_price": 500,
-            "pro_image": "/media/imgs/frames/DNW_92023_R500_C3_i1.jpg",
+            "pro_name": "King&Queen 929907",
+            "pro_price": 540,
+            "pro_image": "/media/imgs/frames/King&Queen_929907_i1.jpg",
             "pro_images": [
-              "/media/imgs/frames/DNW_92023_R500_C3_i1.jpg",
-              "/media/imgs/frames/DNW_92023_R500_C3_i2.jpg",
-              "/media/imgs/frames/DNW_92023_R500_C3_i3.jpg",
-              "/media/imgs/frames/DNW_92023_R500_C3_i4.jpg"
+              "/media/imgs/frames/King&Queen_929907_i1.jpg",
+              "/media/imgs/frames/King&Queen_929907_i2.jpg",
+              "/media/imgs/frames/King&Queen_929907_i3.jpg",
+              "/media/imgs/frames/King&Queen_929907_i4.jpg"
             ],
             "pro_style": "full_frame",
             "pro_color": "grey",
             "pro_size": "M",
             "pro_material": "Fiber",
             "pro_shape": "round",
-            "pro_rating": 4.7,
-            "pro_gender": "women",
+            "pro_rating": 4.9,
+            "pro_gender": "men",
             "pro_category" : "frames",
-            "pro_brand": "dnw"
+            "pro_brand": "king&queen"
         },
         {           
             "pro_id": 1053,

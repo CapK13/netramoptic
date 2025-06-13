@@ -48,7 +48,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    
+            
       {/* Map Section */}
       <div className="mt-10">
         <h3 className="text-lg font-semibold mb-4 text-center">Visit Our Store</h3>

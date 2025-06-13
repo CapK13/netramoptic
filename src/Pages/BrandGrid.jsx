@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ExtraPhotos from '../ExtraPhotos.json';
-
+        
 const brands = [
     'Wolfeyes', 'Scott', 'Enfys', 'knighthorse',
     'kyaans', 'Tomhardy', 'vins', 'Raw7'

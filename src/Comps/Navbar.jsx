@@ -66,7 +66,7 @@ const Navbar = ({ user, setUser }) => {
                 `hover:text-gray-300 transition ${isActive ? "underline underline-offset-4" : ""
                 }`
               }
-            >
+            >     
               Goggles
             </NavLink>
           </li>
@@ -138,14 +138,14 @@ const Navbar = ({ user, setUser }) => {
           <i className="fa-solid fa-bars"></i>
         </button>
       )}
-  
+
       {isOpen && (
         <div
           className="fixed inset-0 bg-black opacity-50 z-10"
           onClick={() => setIsOpen(false)}
         ></div>
       )}
-            
+
       <div
         className={`fixed top-0 left-0 w-4/5 h-full bg-gray-900 text-white shadow-lg transform transition-transform duration-300 z-20 ${isOpen ? "translate-x-0" : "-translate-x-full"
           } md:hidden flex flex-col items-center py-10 gap-8`}
