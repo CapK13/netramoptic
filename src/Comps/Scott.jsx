@@ -14,42 +14,44 @@ const Scott = () => {
   const loadMore = () => setVisibleCount((prev) => prev + 6);
 
   useEffect(() => {
-    fetch('https://netramoptics.onrender.com/fetchData')
-      .then((res) => res.json())
-      .then((data) => {
-        if (Array.isArray(data)) {
-          setFrames(data);
-        } else {
-          console.warn("Expected array from API response");
-        }
-      })
-      .catch((err) => console.error("API fetch error:", err));
+    const fetchFrames = async () => {
+      try {
+        const response = await fetch('https://netramoptics.onrender.com/fetchData');
+        const data = await response.json();
+        const scottFrames = data.frames?.filter(
+          (frame) => frame.pro_brand?.toLowerCase() === 'scott'
+        );
+        setFrames(scottFrames || []);
+      } catch (error) {
+        console.error('Error fetching Scott frames:', error);
+      }
+    };
+
+    fetchFrames();
   }, []);
 
   const getFilteredFrames = () => {
-    return frames
-      .filter((frame) => frame.pro_brand?.toLowerCase() === 'scott')
-      .filter((frame) => {
-        const price = Number(frame.pro_price);
-        const style = frame.pro_style?.toLowerCase();
-        const gender = frame.pro_gender?.toLowerCase();
+    return frames.filter((frame) => {
+      const price = Number(frame.pro_price);
+      const style = frame.pro_style?.toLowerCase();
+      const gender = frame.pro_gender?.toLowerCase();
 
-        const genderCheck = genderFilter === 'all' || gender === genderFilter;
-        const styleCheck = styleFilter === 'all' || style === styleFilter;
+      const genderCheck = genderFilter === 'all' || gender === genderFilter;
+      const styleCheck = styleFilter === 'all' || style === styleFilter;
 
-        const priceCheck = (() => {
-          switch (priceFilter) {
-            case '0-500': return price <= 500;
-            case '501-1000': return price > 500 && price <= 1000;
-            case '1001-3000': return price > 1000 && price <= 3000;
-            case '3001-5000': return price > 3000 && price <= 5000;
-            case '5000+': return price > 5000;
-            default: return true;
-          }
-        })();
+      const priceCheck = (() => {
+        switch (priceFilter) {
+          case '0-500': return price <= 500;
+          case '501-1000': return price > 500 && price <= 1000;
+          case '1001-3000': return price > 1000 && price <= 3000;
+          case '3001-5000': return price > 3000 && price <= 5000;
+          case '5000+': return price > 5000;
+          default: return true;
+        }
+      })();
 
-        return genderCheck && styleCheck && priceCheck;
-      });
+      return genderCheck && styleCheck && priceCheck;
+    });
   };
 
   return (
