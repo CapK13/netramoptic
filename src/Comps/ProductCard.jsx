@@ -11,10 +11,10 @@ const ProductCard = ({ product }) => {
         {/* Product Title */}
         <h2 className="text-center text-xl font-semibold text-gray-800 mb-4 group-hover:text-indigo-600 transition-colors duration-200">
           {product.pro_name}
-        </h2>                       
+        </h2>                     
         {/* Product Image */}
-        <div className="p-1 rounded-xl overflow-hidden">
-          <div className="relative h-48 rounded-lg">
+        <div className="p-3 rounded-xl overflow-hidden">
+          <div className="relative h-48">
             <img              
               src={product.pro_image}
               alt={product.pro_name}
