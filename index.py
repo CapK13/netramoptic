@@ -3804,7 +3804,7 @@ data = {
         {
             "pro_id": 1026,
             "pro_name": "Tomhardy 935202",
-            "pro_price": 599,
+            "pro_price": 400,
             "pro_image": "/media/imgs/frames/Tomhardy_935202_i1.jpg",
             "pro_images": [
               "/media/imgs/frames/Tomhardy_935202_i1.jpg",
