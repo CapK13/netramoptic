@@ -2947,7 +2947,7 @@ data = {
          {
             "pro_id": 1148,
             "pro_name": "wolfeyes 80062",
-            "pro_price": 950,
+            "pro_price": 1800,
             "pro_image": "/media/imgs/frames/Wolfeyes_80062_C3_i1.jpg",
             "pro_images": [
               "Wolfeyes_80062_C3_i1.jpg",
@@ -2968,7 +2968,7 @@ data = {
          {
             "pro_id": 1149,
             "pro_name": "wolfeyes H00319",
-            "pro_price": 950,
+            "pro_price": 1800,
             "pro_image": "/media/imgs/frames/Wolfeyes_H00319_C9_i1.jpg",
             "pro_images": [
               "Wolfeyes_H00319_C9_i1.jpg",
