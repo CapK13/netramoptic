@@ -2079,7 +2079,7 @@ data = {
             "pro_size": "M",
             "pro_material": "fiber",
             "pro_shape": "round",
-            "pro_gender": "women",
+            "pro_gender": "men",
             "pro_category" : "frames",
             "pro_brand" : "scott"
          },
@@ -2111,7 +2111,7 @@ data = {
             "pro_size": "M",
             "pro_material": "fiber",
             "pro_shape": "square",
-            "pro_gender": "women",
+            "pro_gender": "men",
             "pro_category" : "frames",
             "pro_brand" : "scott"
          },
