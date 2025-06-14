@@ -49,8 +49,6 @@ const BrandGrid = () => {
                                     </span>
                                 )}
                             </motion.div>
-
-
                         </Link>
                     );
                 })}
