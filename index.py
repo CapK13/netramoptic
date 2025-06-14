@@ -2951,9 +2951,9 @@ data = {
             "pro_image": "/media/imgs/frames/Wolfeyes_80062_C3_i1.jpg",
             "pro_images": [
               "Wolfeyes_80062_C3_i1.jpg",
-              "Wolfeyes_80062_C3_i1.jpg",
-              "Wolfeyes_80062_C3_i1.jpg",
-              "Wolfeyes_80062_C3_i1.jpg",
+              "Wolfeyes_80062_C3_i2.jpg",
+              "Wolfeyes_80062_C3_i3.jpg",
+              "Wolfeyes_80062_C3_i4.jpg",
             ],
             "pro_style": "full_frame",
             "pro_color": "pink",
