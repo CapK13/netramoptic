@@ -2070,7 +2070,7 @@ data = {
          {
             "pro_id": 1102,
             "pro_name": "Scott SC9042",
-            "pro_price": 2500,
+            "pro_price": 2600,
             "pro_image": "/media/imgs/frames/Scott_SC9042_R2500_U.png",
             "pro_images": [
             ],
@@ -2117,7 +2117,7 @@ data = {
          },
          {
             "pro_id": 1105,
-            "pro_name": "Scott SC9043",
+            "pro_name": "Scott SC9034",
             "pro_price": 3500,
             "pro_image": "/media/imgs/frames/Scott_SC9034_R3500_M.png",
             "pro_images": [

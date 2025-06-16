@@ -46,7 +46,7 @@ const Navbar = ({ user, setUser }) => {
         <h1 className="logo font-bold text-2xl">
           <Link to="/">Netram Optic</Link>
         </h1>
-
+        
         <ul className="hidden md:flex md:w-1/2 justify-around gap-4">
           <li className="cursor-pointer list-none text-xl">
             <NavLink
