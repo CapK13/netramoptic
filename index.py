@@ -2149,7 +2149,7 @@ data = {
          },
          {
             "pro_id": 1107,
-            "pro_name": "Scott SC5728",
+            "pro_name": "Scott SC5728 C3",
             "pro_price": 3100,
             "pro_image": "/media/imgs/frames/Scott_SC5728_C3_M_R3100.png",
             "pro_images": [
