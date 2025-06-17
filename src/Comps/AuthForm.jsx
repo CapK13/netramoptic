@@ -3,23 +3,32 @@ import axios from 'axios';
 
 const API = 'https://netramoptics.onrender.com'; // Change to Railway domain when deployed
 
+const validateEmail = (email) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
 export const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!validateEmail(email)) newErrors.email = 'Invalid email format';
+    if (password.length < 6) newErrors.password = 'Password must be at least 6 characters';
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    try {
-      const res = await axios.post(`https://netramoptics.onrender.com/api/auth/login`, {
-        email,
-        password,
-      });
+    if (!validateForm()) return;
 
+    try {
+      const res = await axios.post(`${API}/api/auth/login`, { email, password });
       const { token, user } = res.data;
       localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('token', token);
-
       setMessage('Login successful.');
       onLogin && onLogin(user);
       window.location.href = '/profile';
@@ -29,46 +38,55 @@ export const Login = ({ onLogin }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white dark:bg-gray-900 text-black dark:text-white shadow-2xl rounded-2xl mt-10">
-      <h2 className="text-2xl font-bold mb-4 text-center">Login</h2>
+    <div className="...">
+      <h2 className="...">Login</h2>
       <form onSubmit={handleLogin} className="space-y-4">
         <input
           type="email"
           placeholder="Email"
-          className="w-full px-4 py-2 border rounded-md"
+          className="..."
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
+        {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
         <input
           type="password"
           placeholder="Password"
-          className="w-full px-4 py-2 border rounded-md"
+          className="..."
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit" className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800">
-          Login
-        </button>
+        {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
+        <button type="submit" className="...">Login</button>
         {message && <p className="text-center text-sm text-red-500">{message}</p>}
       </form>
     </div>
   );
 };
 
+
 export const Register = ({ onRegister }) => {
   const [formData, setFormData] = useState({ username: '', email: '', password: '' });
   const [message, setMessage] = useState('');
+  const [errors, setErrors] = useState({});
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const validateForm = () => {
+    const newErrors = {};
+    if (formData.username.trim().length < 3) newErrors.username = 'Username must be at least 3 characters';
+    if (!validateEmail(formData.email)) newErrors.email = 'Invalid email format';
+    if (formData.password.length < 6) newErrors.password = 'Password must be at least 6 characters';
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
+
     try {
-      const res = await axios.post(`https://netramoptics.onrender.com/api/auth/register`, formData);
+      const res = await axios.post(`${API}/api/auth/register`, formData);
       setMessage('Registration successful.');
       onRegister && onRegister(res.data);
     } catch (err) {
@@ -76,42 +94,49 @@ export const Register = ({ onRegister }) => {
     }
   };
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: '' }); // Clear on change
+  };
+
   return (
-    <div className="max-w-md mx-auto p-6 bg-white dark:bg-gray-900 text-black dark:text-white shadow-2xl rounded-2xl mt-10">
-      <h2 className="text-2xl font-bold mb-4 text-center">Register</h2>
+    <div className="...">
+      <h2 className="...">Register</h2>
       <form onSubmit={handleRegister} className="space-y-4">
         <input
           type="text"
           name="username"
           placeholder="Username"
-          className="w-full px-4 py-2 border rounded-md"
+          className="..."
           value={formData.username}
           onChange={handleChange}
           required
         />
+        {errors.username && <p className="text-red-500 text-sm">{errors.username}</p>}
         <input
           type="email"
           name="email"
           placeholder="Email"
-          className="w-full px-4 py-2 border rounded-md"
+          className="..."
           value={formData.email}
           onChange={handleChange}
           required
         />
+        {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
         <input
           type="password"
           name="password"
           placeholder="Password"
-          className="w-full px-4 py-2 border rounded-md"
+          className="..."
           value={formData.password}
           onChange={handleChange}
           required
         />
-        <button type="submit" className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800">
-          Register
-        </button>
+        {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
+        <button type="submit" className="...">Register</button>
         {message && <p className="text-center text-sm text-red-500">{message}</p>}
       </form>
     </div>
   );
 };
+

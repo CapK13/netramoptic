@@ -24,7 +24,7 @@ const WomenFrames = () => {
         setLoading(false);
       }
     };
-
+        
     fetchFrames();
   }, []);
 

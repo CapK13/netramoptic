@@ -12,7 +12,7 @@ const Wolfeyes = () => {
   const [visibleCount, setVisibleCount] = useState(9);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  
   useEffect(() => {
     const fetchFrames = async () => {
       try {
@@ -28,7 +28,7 @@ const Wolfeyes = () => {
         setLoading(false);
       }
     };
-
+    
     fetchFrames();
   }, []);
 
