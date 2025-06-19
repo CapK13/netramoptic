@@ -10,7 +10,7 @@ const shuffleArray = (array) => {
     .sort((a, b) => a.sort - b.sort)
     .map(({ item }) => item);
 };
-
+  
 const Frames = () => {
   const [frames, setFrames] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);

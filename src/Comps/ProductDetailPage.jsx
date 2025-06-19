@@ -31,9 +31,6 @@ const ProductDetailPage = () => {
   }
 
   const productColor = product.pro_color || "#666";
-  // const gradientBg = {
-  //   backgroundImage: `linear-gradient(to bottom right, ${productColor}, #38bdf8)`,
-  // };
 
   const category = product.pro_category?.toLowerCase() || "";
   const isFrame = category.includes("frame");
@@ -211,8 +208,8 @@ const ProductDetailPage = () => {
                 ></span>
               </div> */}
 
-              <StarRating rating={product.pro_rating || 4.2} />
-
+              <StarRating rating={product.pro_rating || 4.6} />
+                
               <div className="mt-4 space-y-2">
                 <p className="text-sm sm:text-md font-medium text-gray-700">Choose an Option:</p>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -246,7 +243,6 @@ const ProductDetailPage = () => {
                   >
                     Add to Cart
                   </button>
-
                 )}
               </div>
             </div>

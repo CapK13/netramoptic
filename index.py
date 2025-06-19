@@ -3087,7 +3087,7 @@ data = {
          {
             "pro_id": 2007,
             "pro_name": "Benhunt 6008 C4",
-            "pro_price": 1900,
+            "pro_price": 1499,
             "pro_image": "/media/imgs/goggles/benhunt_6008_C4_M_1900.jpg",
             "pro_images": [
             ],

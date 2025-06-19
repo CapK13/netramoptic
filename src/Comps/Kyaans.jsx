@@ -34,7 +34,7 @@ const Kyaans = () => {
     };
     fetchFrames();
   }, []);
-
+        
   useEffect(() => {
     const filtered = frames.filter((frame) => {
       const price = Number(frame.pro_price);
@@ -77,7 +77,7 @@ const Kyaans = () => {
               <i className="fa-solid fa-xmark text-lg"></i>
             </button>
           </div>
-
+          
           <h2 className="text-xl font-bold mb-4 text-white">Gender</h2>
           <div className="flex flex-wrap gap-3 mb-6">
             {['all', 'men', 'women', 'kids'].map((option) => (

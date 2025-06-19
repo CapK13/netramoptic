@@ -43,7 +43,7 @@ const Footer = () => {
           <div className="flex space-x-4 text-lg">
             <a href="#" className="hover:text-blue-500"><i className="fab fa-facebook-f"></i></a>
             <a href="#" className="hover:text-pink-500"><i className="fab fa-instagram"></i></a>
-            <a href="#" className="hover:text-sky-500"><i className="fab fa-twitter"></i></a>
+            <a href="#" className="hover:text-red-700"><i className="fab fa-pintrest"></i></a>
             <a href="#" className="hover:text-red-600"><i className="fab fa-youtube"></i></a>
           </div>
         </div>
