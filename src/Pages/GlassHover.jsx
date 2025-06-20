@@ -31,12 +31,7 @@ const GlassHover = () => {
           background: `radial-gradient(circle at ${pos.x}% ${pos.y}%, rgba(255,255,255,0.15), transparent 60%)`,
         }}
       />
-        <div className=''>
-              {"I alone am the honred one"}
-              {"the only one hwo can changr it"}
-              {"fate is whatever i make it to be"}
-              {"invinicble under the sun"}
-        </div>
+  
 
     </div>    
   );

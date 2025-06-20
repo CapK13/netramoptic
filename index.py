@@ -3426,7 +3426,7 @@ data = {
             "pro_id": 1171,
             "pro_name": "Vins superslim NT1107 C2",
             "pro_price": 3600,
-            "pro_image": "/media/imgs/frames/Vins_superslim_NT1107_C1_i1.jpg",
+            "pro_image": "/media/imgs/frames/Vins_superslim_NT1107_C2_i1.jpg",
             "pro_images": [
               "/media/imgs/frames/Vins_superslim_NT1107_C2_i1.jpg",
               "/media/imgs/frames/Vins_superslim_NT1107_C2_i2.jpg",

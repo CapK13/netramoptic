@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Extraphotos from '../ExtraPhotos.json';
+import ExtraPhotos from '../ExtraPhotos.json';
 
 const floatIn = {
   hidden: (i) => ({
@@ -21,33 +21,37 @@ const floatIn = {
     },
   }),
 };
-       
+
+// Helper to get a random image from an array
+const getRandomImage = (images) =>
+  images[Math.floor(Math.random() * images.length)];
+
 const categories = [
-  {     
+  {
     label: 'Men',
-    image: Extraphotos.mens_glasses,
+    image: getRandomImage(ExtraPhotos.men),
     path: '/frames/men',
   },
   {
     label: 'Women',
-    image: Extraphotos.women_glasses || Extraphotos.womens_glasses,
+    image: getRandomImage(ExtraPhotos.women),
     path: '/frames/women',
   },
   {
     label: 'Kids',
-    image: Extraphotos.kids_glasses2,
+    image: getRandomImage(ExtraPhotos.kids),
     path: '/frames/kids',
   },
 ];
 
 const CategoryBoxes = () => {
   return (
-    <div    
+    <div
       className="w-full p-4 grid gap-5
       max-md:grid-cols-1 max-md:grid-rows-3
       md:w-1/2 md:h-full md:grid-cols-2 md:grid-rows-2
       md:justify-items-center md:items-center md:px-20"
-    >         
+    >
       {categories.map((cat, i) => (
         <Link key={i} to={cat.path}>
           <motion.div

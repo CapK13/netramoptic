@@ -123,7 +123,7 @@ const Navbar = ({ user, setUser }) => {
             </>
           ) : (
             <>
-              <Link to="/auth" className="text-sm hover:underline"> Create Profile </Link>
+              <Link to="/auth" className="text-sm hover:underline"> Create Account </Link>
               {/* <Link to="/auth" className="text-sm hover:underline">Register</Link> */}
             </>
           )}
