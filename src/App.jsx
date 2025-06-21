@@ -69,6 +69,7 @@ const App = () => {
         <Route path="/brands/vins" element={<Vins />} />
         <Route path="/brands/raw7" element={<Raw7 />} />
         <Route path="/special_cat/titanium" element={<TitaniumFrames />} />
+        <Route path="/product/:id" element={<ProductDetailPage />} />
         <Route
           path="/profile"
           element={<Profile user={user} setUser={setUser} />}
