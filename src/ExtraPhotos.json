@@ -9,7 +9,7 @@
     "women" : [
                "/media/imgs/ads/women/women_glasses_1.jpg",
                "/media/imgs/ads/women/women_glasses_2.jpg",
-               "/media/imgs/ads/women/women_glasses_3.jpg",
+               "/media/imgs/ads/women/women_glasses_3.jpeg",
                "/media/imgs/ads/women/women_glasses_4.jpg",
                "/media/imgs/ads/women/women_glasses_5.jpeg",
                "/media/imgs/ads/women/women_glasses_6.jpeg",
@@ -36,6 +36,13 @@
                  "/media/imgs/ads/back/hero_back_1.jpeg",
                  "/media/imgs/ads/back/hero_back_2.jpeg",
                  "/media/imgs/ads/back/hero_back_3.jpg"
+    ],
+    "show" : [
+                 "/media/imgs/ads/sho/titanium_ad_1.jpeg",
+                 "/media/imgs/ads/sho/titanium_ad_2.jpeg",
+                 "/media/imgs/ads/sho/pol_goggle_1.jpeg",
+                 "/media/imgs/ads/sho/pol_goggle_2.jpeg"
+
     ],
 
     "wolfeyes_logo": "/media/imgs/brands/wolfeyes.png",

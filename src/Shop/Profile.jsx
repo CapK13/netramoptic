@@ -102,7 +102,6 @@ const Profile = () => {
                       </div>
                     </div>
                   ))}
-
                 </div>
 
                 <div className="mt-4 text-sm text-gray-600">

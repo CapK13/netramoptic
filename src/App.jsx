@@ -28,6 +28,7 @@ import TermsAndConditions from './Comps/Footer_Comps/TermsAndConditions';
 import FAQ from './Comps/Footer_Comps/FAQ';
 import PrivacyPolicy from './Comps/Footer_Comps/PrivacyPolicy'
 import AuthPage from './Pages/AuthPage';
+import TitaniumFrames from './Pages/TitaniumFrames';
 
 const App = () => {
       
@@ -67,6 +68,7 @@ const App = () => {
         <Route path="/brands/tomhardy" element={<Tomhardy />} />
         <Route path="/brands/vins" element={<Vins />} />
         <Route path="/brands/raw7" element={<Raw7 />} />
+        <Route path="/special_cat/titanium" element={<TitaniumFrames />} />
         <Route
           path="/profile"
           element={<Profile user={user} setUser={setUser} />}
