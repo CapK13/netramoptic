@@ -1,13 +1,20 @@
 {
     "men" : [
              "/media/imgs/ads/men/mens_glasses.jpg",
-             "/media/imgs/ads/men/mens_glasses_2.jpeg"
+             "/media/imgs/ads/men/mens_glasses_2.jpeg",
+             "/media/imgs/ads/men/mens_glasses_3.jpeg",
+             "/media/imgs/ads/men/mens_glasses_4.jpeg",
+             "/media/imgs/ads/men/mens_glasses_5.jpeg"
     ],
     "women" : [
                "/media/imgs/ads/women/women_glasses_1.jpg",
                "/media/imgs/ads/women/women_glasses_2.jpg",
                "/media/imgs/ads/women/women_glasses_3.jpg",
-               "/media/imgs/ads/women/women_glasses_4.jpg"
+               "/media/imgs/ads/women/women_glasses_4.jpg",
+               "/media/imgs/ads/women/women_glasses_5.jpeg",
+               "/media/imgs/ads/women/women_glasses_6.jpeg",
+               "/media/imgs/ads/women/women_glasses_7.jpeg",
+               "/media/imgs/ads/women/women_glasses_8.jpeg"
     ],
     "kids" : [
                 "/media/imgs/ads/kids/kids_glasses.jpg",
@@ -18,7 +25,11 @@
                    "/media/imgs/ads/back/hero_back_1.jpeg",
                    "/media/imgs/ads/back/hero_back_2.jpeg",
                    "/media/imgs/ads/back/hero_back_3.jpg",
-                   "/media/imgs/ads/back/hero_back_4.jpeg"
+                   "/media/imgs/ads/back/hero_back_4.jpeg",
+                   "/media/imgs/ads/back/hero_back_5.jpeg",
+                   "/media/imgs/ads/back/hero_back_6.jpeg",
+                   "/media/imgs/ads/back/hero_back_7.jpeg",
+                   "/media/imgs/ads/back/hero_back_8.jpeg"
     ],
     "back" : [
                  "/media/imgs/ads/back/back_glasses.jpg",
