@@ -77,6 +77,8 @@ const Frames = () => {
     });
   };
 
+  
+
   const filteredFrames = getFilteredFrames();
   const displayedFrames = filteredFrames.slice(0, visibleCount);
 

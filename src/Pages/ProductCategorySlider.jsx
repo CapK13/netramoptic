@@ -119,7 +119,7 @@ const ProductCategorySlider = () => {
                 {categories.map((category, index) => {
                     const ref = useRef(null)
                     const inView = useInView(ref, { margin: '-10% 0px' })
-
+                    
                     return (
                         <Link to={category.path} key={index}>
                             <motion.div

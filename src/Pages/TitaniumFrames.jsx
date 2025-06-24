@@ -3,6 +3,7 @@ import ProductCard from '../Comps/ProductCard';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 const TitaniumFrames = () => {
+
   const [frames, setFrames] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [genderFilter, setGenderFilter] = useState('all');
@@ -27,7 +28,7 @@ const TitaniumFrames = () => {
         setLoading(false);
       }
     };
-
+    
     fetchFrames();
   }, []);
 

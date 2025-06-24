@@ -12,7 +12,7 @@ const Footer = () => {
             Your trusted source for stylish eyewear. We bring vision and fashion together.
           </p>
         </div>
-        
+
         {/* Quick Links */}
         <div>
           <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
@@ -48,12 +48,12 @@ const Footer = () => {
           </div>
         </div>
       </div>
-            
+
       {/* Map Section */}
       <div className="mt-10">
         <h3 className="text-lg font-semibold mb-4 text-center">Visit Our Store</h3>
         <div className="w-full h-64 md:h-96">
-          <iframe 
+          <iframe
             title="Netram Optic Location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1227.7165436982089!2d70.45337754823557!3d21.521923555108614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395801f33828d723%3A0x4823899cbaa03bff!2sNetram%20Optic%2C%20eye%20glasses%2C%20contactlens%2C%20goggles%2C%20optical%20frame%20bluecut%20lens%2C%20essilor%2CZeiss%2Ccrizal%20uv%2Cbest%20opticians%20Junagadh!5e1!3m2!1sen!2sin!4v1749725424418!5m2!1sen!2sin"
             width="100%"
@@ -70,6 +70,7 @@ const Footer = () => {
       <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm">
         &copy; {new Date().getFullYear()} Netram Optic. All rights reserved.
       </div>
+
     </footer>
   );
 };

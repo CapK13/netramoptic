@@ -25,7 +25,7 @@ const ProductDetailPage = () => {
   });
 
   const [showPrescriptionReview, setShowPrescriptionReview] = useState(false);
-
+  
   if (!product) {
     return <div className="p-6 text-center text-lg text-red-600">Product data not available 😢</div>;
   }

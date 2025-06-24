@@ -65,9 +65,9 @@ const MenFrames = () => {
       window.scrollBy({ top: 400, behavior: 'smooth' });
     }, 100);
   };
-
+  
   return (
-    <div className="min-h-screen w-full flex bg-gray-100 transition-all duration-300">
+    <div className="min-h-screen w-full flex bg-black transition-all duration-300">
       {/* Sidebar */}
       <div className={`fixed top-0 left-0 h-screen w-1/4 max-md:w-full bg-gray-900 shadow-md z-30 transition-all duration-300 transform ${sidebarOpen ? 'translate-x-0 opacity-100 pointer-events-auto' : '-translate-x-full opacity-0 pointer-events-none'}`}>
         <div className="p-4">
