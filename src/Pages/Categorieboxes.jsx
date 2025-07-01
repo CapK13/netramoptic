@@ -47,13 +47,11 @@ const categories = [
 const CategoryBoxes = () => {
   return (
     <div
-      className="w-full p-4 grid gap-5
-      max-md:grid-cols-1 max-md:grid-rows-3
-      md:w-1/2 md:h-full md:grid-cols-2 md:grid-rows-2
-      md:justify-items-center md:items-center md:px-20"
+      className="w-full px-4 py-6 flex justify-between items-center gap-3
+      md:justify-center md:gap-8"
     >
       {categories.map((cat, i) => (
-        <Link key={i} to={cat.path}>
+        <Link key={i} to={cat.path} className="flex-shrink-0">
           <motion.div
             custom={i}
             variants={floatIn}
@@ -65,21 +63,20 @@ const CategoryBoxes = () => {
               boxShadow: '0px 8px 20px rgba(0,0,0,0.15)',
             }}
             className={`relative overflow-hidden rounded-2xl
-            flex items-center justify-center text-white font-bold text-xl cursor-pointer group
-            max-md:h-48 max-md:w-full
-            md:h-60 md:w-52 
-            ${i === 2 ? 'md:col-span-2 md:justify-self-center' : ''}`}
+            flex items-end justify-center text-white font-bold text-sm md:text-xl cursor-pointer group
+            h-32 w-24 md:h-60 md:w-52`}
           >
             <div
-              className="absolute inset-0 bg-cover bg-center transition-all duration-300 opacity-70 group-hover:opacity-100 group-hover:scale-105 rounded-xl scale-100"
+              className="absolute inset-0 bg-cover bg-center transition-all duration-300 max-md:scale-105 opacity-70 group-hover:opacity-100 group-hover:scale-110 rounded-xl scale-100"
               style={{ backgroundImage: `url(${cat.image})` }}
             />
-            <span className="z-10 md:pb-4 md:self-end">{cat.label}</span>
+            <span className="z-10">{cat.label}</span>
           </motion.div>
         </Link>
       ))}
     </div>
   );
 };
+
 
 export default CategoryBoxes;

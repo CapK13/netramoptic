@@ -761,7 +761,9 @@ data = {
         {
             "pro_id": 1037,
             "pro_name": "enfys DTX124",
+            "pro_des" : "golden glasses and long discription",
             "pro_price": 5699,
+            "pro_main_price" : 5999,
             "pro_image": "/media/imgs/frames/ENFYS_DTX124_i1.jpg",
             "pro_images": [
               "/media/imgs/frames/ENFYS_DTX124_i1.jpg",

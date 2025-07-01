@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import GlassHover from './GlassHover';
 import ExtraPhotos from '../ExtraPhotos.json';
 
@@ -29,6 +29,9 @@ const word = {
 const Welcome = () => {
   const randomBackground = getRandomHeroImage();
 
+  const highlightRef = useRef(null);
+  const isInView = useInView(highlightRef, { once: true });
+
   return (
     <motion.div
       variants={sentence}
@@ -50,12 +53,22 @@ const Welcome = () => {
       >
         Frames That Fit Your Life.
       </motion.p>
-      <motion.p
-        variants={word}
-        className="text-lg sm:text-xl md:text-2xl font-medium text-gray-100 z-10"
-      >
-        Eyewear for Every Face. Every Mood.
-      </motion.p>
+
+      {/* ✅ Bottom-Aligned Paragraph with Sweep Animation */}
+      <div className="absolute bottom-4 z-10 max-w-md px-2">
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: '100%' }}
+          transition={{ duration: 0.6, ease: 'easeOut' }} // 🔥 faster
+          className="absolute left-0 top-0 h-full bg-white/20 rounded"
+          style={{ zIndex: -1 }}
+        />
+        <p className="relative text-xs sm:text-sm md:text-base font-medium text-white">
+          Explore classic to bold styles — curated to match your vibe and vision.
+        </p>
+      </div>
+
+
     </motion.div>
   );
 };

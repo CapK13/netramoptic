@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import StarRating from "./Pro_Details_Pages/StarRating";
 
 const ProductDetailPage = () => {
+
   const { id } = useParams();
   const location = useLocation();
   const product = location.state?.product;
@@ -25,12 +26,10 @@ const ProductDetailPage = () => {
   });
 
   const [showPrescriptionReview, setShowPrescriptionReview] = useState(false);
-  
+
   if (!product) {
     return <div className="p-6 text-center text-lg text-red-600">Product data not available 😢</div>;
   }
-
-  const productColor = product.pro_color || "#666";
 
   const category = product.pro_category?.toLowerCase() || "";
   const isFrame = category.includes("frame");
@@ -147,108 +146,148 @@ const ProductDetailPage = () => {
   const [selectedImage, setSelectedImage] = useState(product.pro_image);
 
   return (
-    <div className="min-h-screen md:min-h-[90vh] p-4 sm:p-6" >
+    <div className="min-h-screen md:min-h-[90vh] p-2 sm:p-6" >
       {/* 🔷 Top Section - Details & Selection */}
-      <div className="max-w-6xl max-md:mt-14 mx-auto bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-gray-800">
-          {product.pro_name}
-        </h1>
 
-        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8">
-          {/* Image section */}
 
-          <div className="w-full lg:w-1/2 flex flex-col sm:flex-row gap-4">
-            {/* Thumbnails - Vertical on larger, horizontal on smaller */}
-            <div className="flex sm:flex-col gap-3 overflow-x-auto  max-sm:justify-center">
+
+
+      <div className="w-full mx-auto bg-white sm:rounded-2xl shadow-sm px-4 py-5 sm:px-6 sm:py-8 lg:px-10 lg:py-10">
+        {/* Product Content Row */}
+        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 max-md:mt-12">
+
+          {/* Left: Images */}
+          <div className="w-full lg:w-1/2 flex flex-col sm:flex-row gap-3 sm:gap-4">
+            {/* Thumbnails */}
+            <div className="flex sm:flex-col gap-2 overflow-x-auto sm:overflow-y-auto max-sm:justify-center">
               {product.pro_images?.map((img, index) => (
                 <img
                   key={index}
                   src={img}
                   alt={`thumb-${index}`}
                   onClick={() => setSelectedImage(img)}
-                  className={`w-16 h-16 rounded-md border object-cover cursor-pointer transition-all ${selectedImage === img
-                    ? "scale-90"
-                    : "border-gray-300"
+                  className={`w-16 h-16 sm:w-20 sm:h-20 rounded-lg border object-cover cursor-pointer transition-all ${selectedImage === img ? "scale-95 border-indigo-500" : "border-gray-300"
                     }`}
                 />
               ))}
             </div>
 
-            {/* Main Image - Responsive */}
-            <div className="flex-1 flex justify-center items-center rounded-xl border overflow-hidden min-h-[200px] max-h-[400px] sm:min-h-[300px] ">
+            {/* Main Image */}
+            <div className="flex-1 border rounded-xl overflow-hidden bg-gray-50 flex justify-center items-center min-h-[250px] sm:min-h-[300px] max-h-[400px]">
               <img
                 src={selectedImage}
                 alt={product.pro_name}
-                className="max-w-full max-h-full object-contain transition-transform duration-300 rounded-lg"
+                className="max-h-full max-w-full object-contain rounded-lg transition-all duration-300"
               />
             </div>
           </div>
 
-          {/* Info section */}
-          <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-4 sm:space-y-5 relative">
-            <div className="absolute top-0 right-0 sm:hidden text-sm text-yellow-700 flex items-center gap-1 p-2">
-              <i className="fa fa-star text-yellow-500" />
-              <span className="font-medium">{product.pro_rating || "4.2"}</span>
+          {/* Right: Info */}
+          <div className="w-full lg:w-1/2 space-y-5 sm:space-y-6">
+
+            {/* Title */}
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">{product.pro_name}</h1>
+
+            {/* Price + Main Price */}
+            <div className="flex items-center gap-1">
+              <span className="text-xl sm:text-2xl font-bold text-indigo-700">₹{product.pro_price}</span>
+              {product.pro_main_price && (
+                <span className="text-base sm:text-lg text-gray-400 line-through">₹{product.pro_main_price}</span>
+              )}
             </div>
 
-            <div className="space-y-2 sm:space-y-3">
-              <p className="text-base sm:text-lg text-gray-700">
-                <span className="font-semibold">Price:</span>{" "}
-                <span className="text-indigo-700 font-bold text-lg sm:text-xl">
-                  ₹{product.pro_price}
-                </span>
-              </p>
-
-
-              {/* <div className="hidden sm:flex text-sm sm:text-lg text-gray-700 items-center gap-2">
-                <span className="font-semibold"> <span className="font-bold">color</span> :  {product.pro_color} </span>
-                <span
-                  className="w-5 h-5 rounded-full border border-gray-300"
-                  style={{ backgroundColor: product.pro_color }}
-                ></span>
-              </div> */}
-
+            {/* Rating */}
+            <div className="flex items-center gap-2">
               <StarRating rating={product.pro_rating || 4.6} />
-                
-              <div className="mt-4 space-y-2">
-                <p className="text-sm sm:text-md font-medium text-gray-700">Choose an Option:</p>
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                  {[option1, option2].map((opt, index) => (
-                    <label key={index} className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="productOption"
-                        value={opt}
-                        checked={selectedOption === opt}
-                        onChange={() => setSelectedOption(opt)}
-                        className="accent-indigo-600"
-                      />
-                      <span className="text-gray-700 text-sm font-bold sm:text-base">{opt}</span>
-                    </label>
-                  ))}
-                </div>
+              <span className="text-sm text-gray-500">{product.pro_rating || "4.6"} / 5</span>
+            </div>
 
-                {selectedOption === option2 ? (
-                  <div className="w-full mt-4 py-2 text-center font-medium text-indigo-700 bg-indigo-100 rounded-lg text-sm sm:text-base">
-                    Please select options below
-                  </div>
-                ) : (
-                  <button
-                    onClick={handleAddToCart}
-                    disabled={!selectedOption}
-                    className={`w-full mt-4 py-2 cursor-pointer font-medium rounded-lg transition-all ${selectedOption
-                        ? "bg-indigo-600 text-white hover:bg-indigo-700"
-                        : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                      }`}
-                  >
-                    Add to Cart
-                  </button>
-                )}
+            {/* Description */}
+            {product.pro_des && (
+              <div className="mt-1 border-t pt-1">
+                <h2 className="text-base font-semibold text-gray-800 mb-1">Product Description</h2>
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed whitespace-pre-line">
+                  {product.pro_des}
+                </p>
+              </div>
+            )}
+
+            {/* Divider for visual break */}
+            <div className="border-t" />
+
+            {/* Product Specs */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-2 text-sm sm:text-base text-gray-700">
+              <div className="flex flex-col">
+                <span className="text-gray-500">Material</span>
+                <span className="font-medium">{product.pro_material}</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-gray-500">Shape</span>
+                <span className="font-medium">{product.pro_shape}</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-gray-500">Brand</span>
+                <span className="font-medium capitalize">{product.pro_brand}</span>
               </div>
             </div>
           </div>
+
         </div>
+
+        {/* Bottom: Option + Button */}
+        <div className="mt-6 pt-4 border-t">
+
+
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 justify-between flex-wrap">
+            {/* Options (Stylish Toggle Buttons) */}
+            <div className="flex flex-wrap gap-3">
+              {[option1, option2].map((opt, index) => {
+                const isSelected = selectedOption === opt;
+                return (
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => setSelectedOption(opt)}
+                    className={`px-4 py-2 rounded-full border text-sm sm:text-base font-medium transition-all duration-200
+            ${isSelected
+                        ? "bg-indigo-600 text-white border-indigo-600 shadow-md"
+                        : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"}`}
+                  >
+                    {opt}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Add to Cart Button */}
+            <div className="w-full sm:w-auto">
+              {selectedOption === option2 ? (
+                <div className="py-2 px-4 text-center font-medium text-indigo-700 bg-indigo-100 rounded-lg text-sm sm:text-base">
+                  Please select options below
+                </div>
+              ) : (
+                <button
+                  onClick={handleAddToCart}
+                  disabled={!selectedOption}
+                  className={`w-full sm:w-auto px-6 py-3 text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 ${selectedOption
+                      ? "bg-indigo-600 text-white hover:bg-indigo-700 shadow-md"
+                      : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                    }`}
+                >
+                  Add to Cart
+                </button>
+              )}
+            </div>
+          </div>
+
+
+
+        </div>
+
+
       </div>
+
+
 
       {/* 🔻 Bottom Section - Only if Power Glass Selected */}
 

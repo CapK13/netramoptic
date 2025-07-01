@@ -18,7 +18,7 @@ const floatIn = {
             duration: 0.5,
             ease: 'easeOut',
         },
-    }),
+    }), 
 }
 
 const categories = [

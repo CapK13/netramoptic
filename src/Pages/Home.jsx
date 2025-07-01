@@ -10,11 +10,14 @@ import ProductCategorySlider from './ProductCategorySlider';
 const Home = () => {
     return (
         <>
-            <div className='md:h-[90vh] h-auto w-full flex max-md:flex-col'>
-                <div className="h-full w-1/2 max-md:h-screen max-md:w-full p-2">
+            <div className='md:h-[90vh] h-auto w-full flex-col'>
+                <div className="h-1/2 w-full max-md:h-[50vh] max-md:w-full p-2 max-md:mt-20">
                     <Welcome />
                 </div>
                 <CategoryBoxes />
+            </div>
+            <div className=''>
+
             </div>
             <div className="h-screen md:h-[70vh] w-full">
                 <BrandGrid />
@@ -26,7 +29,6 @@ const Home = () => {
                 <TrendingColl />
             </div>
             <Footer />
-            
         </>
     )
 }

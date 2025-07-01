@@ -35,7 +35,7 @@ const Goggles = () => {
     setVisibleCount(9);
   }, [genderFilter, priceFilter, styleFilter]);
 
-  const loadMore = () => {
+  const loadMore = () => {  
     setVisibleCount((prev) => prev + 6);
   };
 
@@ -48,7 +48,7 @@ const Goggles = () => {
       const price = Number(goggle.pro_price ?? 0);
       const style = goggle.pro_style?.toLowerCase();
       const gender = goggle.pro_gender?.toLowerCase();
-
+      
       const genderCheck = genderFilter === 'all' || gender === genderFilter;
       const styleCheck = styleFilter === 'all' || style === styleFilter;
       const priceCheck = (() => {
