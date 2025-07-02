@@ -18,7 +18,7 @@ const Checkout = () => {
     const token = localStorage.getItem("token");
     if (!token) {
       alert("Please login or register to continue to checkout.");
-      navigate("/login", { state: { from: location.pathname } });
+      navigate("/auth", { state: { from: location.pathname } });
     }
   }, []);
 
