@@ -17,9 +17,9 @@ const Home = () => {
                 <CategoryBoxes />
             </div>
             <div className=''>
-
+                
             </div>
-            <div className="h-screen md:h-[70vh] w-full">
+            <div className="h-auto md:h-[70vh] w-full">
                 <BrandGrid />
             </div>
             <div className=" md:h-[70vh] w-full">

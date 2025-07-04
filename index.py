@@ -2493,7 +2493,7 @@ data = {
             "pro_id": 1126,
             "pro_name": "LasVegas YY6602 C2",
             "pro_price": 1000,
-            "pro_image": "/media/imgs/frames/Lasvegas_YY6602_C2_i1.jpg",
+            "pro_image": "/media/imgs/frames/Lasvegas_YY6602_C2_i1_W.jpg",
             "pro_images": [
               "/media/imgs/frames/Lasvegas_YY6602_C2_i1.jpg",
               "/media/imgs/frames/Lasvegas_YY6602_C2_i2.jpg",
@@ -3749,10 +3749,10 @@ data = {
             "pro_images": [
             ],
             "pro_style": "full_frame",
-            "pro_color": "blue",
+            "pro_color": "multicolor",
             "pro_size": "M",
-            "pro_material": "plastic",
-            "pro_shape": "round",
+            "pro_material": "fiber",
+            "pro_shape": "square",
             "pro_gender": "women",
             "pro_category" : "goggle",
             "pro_brand" : "benhunt"
@@ -3768,7 +3768,7 @@ data = {
             "pro_color": "blue",
             "pro_size": "M",
             "pro_material": "plastic",
-            "pro_shape": "round",
+            "pro_shape": "square",
             "pro_gender": "men",
             "pro_category" : "goggle",
             "pro_brand": "benhunt"
