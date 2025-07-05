@@ -1,11 +1,11 @@
 {
   "rewrites": [
     {
-      "source": "/api/:match*",  // If you use /api for backend
+      "source": "/api/:match*",  
       "destination": "/api/:match*"
     },
     {
-      "source": "/product/:id",  // Don't rewrite product API route
+      "source": "/product/:id", 
       "destination": "/product/:id"
     },
     {
