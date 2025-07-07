@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 
 import Navbar from './Comps/Navbar';
 import Profile from './Shop/Profile';
@@ -26,25 +25,31 @@ import WomenFrames from './Comps/WomenFrames';
 import KidsFrames from './Comps/KidsFrames';
 import TermsAndConditions from './Comps/Footer_Comps/TermsAndConditions';
 import FAQ from './Comps/Footer_Comps/FAQ';
-import PrivacyPolicy from './Comps/Footer_Comps/PrivacyPolicy'
+import PrivacyPolicy from './Comps/Footer_Comps/PrivacyPolicy';
+import ReturnPolicy from './Comps/Footer_Comps/ReturnPolicy';
 import AuthPage from './Pages/AuthPage';
 import TitaniumFrames from './Pages/TitaniumFrames';
 
+import AdminApp from './admin/AdminApp';
+
 const App = () => {
-      
   const [user, setUser] = useState(null);
+
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
-    console.log('Loaded user from localStorage:', storedUser); // ← check this
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
   }, []);
-  
+
   return (
-    <>  
+    <>
       <Navbar user={user} setUser={setUser} />
       <Routes>
+        {/* ✅ Updated: Admin route must use "*" */}
+        <Route path="/admin/*" element={<AdminApp />} />
+
+        {/* Public routes */}
         <Route path="/" element={<Home />} />
         <Route path="/frames" element={<Frames />} />
         <Route path="/goggles" element={<Goggles />} />
@@ -60,6 +65,7 @@ const App = () => {
         <Route path="/termsandconditions" element={<TermsAndConditions />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+        <Route path="/returnpolicy" element={<ReturnPolicy />} />
         <Route path="/brands/wolfeyes" element={<Wolfeyes />} />
         <Route path="/brands/enfys" element={<Enfys />} />
         <Route path="/brands/scott" element={<Scott />} />
@@ -67,17 +73,11 @@ const App = () => {
         <Route path="/brands/kyaans" element={<Kyaans />} />
         <Route path="/brands/tomhardy" element={<Tomhardy />} />
         <Route path="/brands/vins" element={<Vins />} />
-        <Route path="/brands/raw7" element={<Raw7  />} />
+        <Route path="/brands/raw7" element={<Raw7 />} />
         <Route path="/special_cat/titanium" element={<TitaniumFrames />} />
-        <Route path="/product/:id" element={<ProductDetailPage />} />
-        <Route
-          path="/profile"
-          element={<Profile user={user} setUser={setUser} />}
-        />
+        <Route path="/profile" element={<Profile user={user} setUser={setUser} />} />
       </Routes>
-
     </>
-
   );
 };
 

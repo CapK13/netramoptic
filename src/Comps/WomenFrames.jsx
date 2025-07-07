@@ -1,14 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from './ProductCard';
+import InfiniteScroll from 'react-infinite-scroll-component';
+
+const shuffleArray = (array) => {
+  return array
+    .map((item) => ({ item, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ item }) => item);
+};
 
 const WomenFrames = () => {
-  const [frames, setFrames] = useState([]);
+ const [frames, setFrames] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [priceFilter, setPriceFilter] = useState("all");
-  const [styleFilter, setStyleFilter] = useState("all");
+  const [genderFilter, setGenderFilter] = useState('all');
+  const [priceFilter, setPriceFilter] = useState('all');
+  const [styleFilter, setStyleFilter] = useState('all');
+  const [visibleCount, setVisibleCount] = useState(9);
+  const [shapeFilter, setShapeFilter] = useState('all');
+  const [colorFilter, setColorFilter] = useState('all');
+  const [materialFilter, setMaterialFilter] = useState('all');
+  const [shapeOpen, setShapeOpen] = useState(false); // For desktop dropdown
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [genderOpen, setGenderOpen] = useState(false);
+  const [priceOpen, setPriceOpen] = useState(false);
+  const [styleOpen, setStyleOpen] = useState(false);
 
+  const [activeDropdown, setActiveDropdown] = useState(null); // 'gender' | 'price' | 'style' | etc.
   // Fetch data on mount
   useEffect(() => {
     const fetchFrames = async () => {

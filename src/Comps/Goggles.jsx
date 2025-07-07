@@ -11,7 +11,6 @@ const shuffleArray = (array) => {
     .map(({ item }) => item);
 };
 
-
 const Goggles = () => {
   const [goggles, setGoggles] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -110,8 +109,8 @@ const Goggles = () => {
         <button
           onClick={() => setActiveDropdown((prev) => (prev === name ? null : name))}
           className={`w-full flex justify-between items-center font-semibold py-2 px-4 rounded transition ${isFiltered
-              ? 'bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-400 text-gray-900'
-              : 'bg-gray-800 text-white hover:bg-gray-700'
+            ? 'bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-400 text-gray-900'
+            : 'bg-gray-800 text-white hover:bg-gray-700'
             }`}
         >
           <span>{getDisplayText()}</span>
@@ -127,8 +126,8 @@ const Goggles = () => {
         >
           <div
             className={`${name === 'color'
-                ? 'grid grid-rows-3 auto-cols-auto grid-flow-col gap-4 p-3'
-                : 'flex flex-wrap gap-3 p-2'
+              ? 'grid grid-rows-3 auto-cols-auto grid-flow-col gap-4 p-3'
+              : 'flex flex-wrap gap-3 p-2'
               }`}
           >
             {options.map((option) => {
@@ -179,8 +178,8 @@ const Goggles = () => {
                     setActiveDropdown(null);
                   }}
                   className={`px-4 py-2 rounded-full border font-semibold transition duration-300 ${isActive
-                      ? 'bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-400 text-gray-900 border-yellow-400'
-                      : 'bg-gray-800 text-gray-200 border-gray-600 hover:bg-gray-700'
+                    ? 'bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-400 text-gray-900 border-yellow-400'
+                    : 'bg-gray-800 text-gray-200 border-gray-600 hover:bg-gray-700'
                     }`}
                 >
                   {name === 'price' && option !== 'all'
@@ -260,7 +259,7 @@ const Goggles = () => {
       {/* Product Section */}
       <div className="flex-1 flex flex-col items-center py-4 max-md:mt-20 transition-all duration-300">
         {!sidebarOpen && (
-          <div className="w-full fixed z-10 left-2 max-md:top-22 flex justify-start mb-4">
+          <div className="md:hidden w-full fixed z-10 left-2 max-md:top-22 flex justify-start mb-4">
             <button
               onClick={toggleSidebar}
               className="px-4 py-2 bg-red-700 text-white rounded hover:bg-red-800 transition flex items-center gap-2"
@@ -293,8 +292,8 @@ const Goggles = () => {
                 {/* Main Button */}
                 <button
                   className={`flex items-center justify-between w-full px-4 py-2 text-sm font-medium border rounded-lg bg-white transition-all duration-200 shadow-sm hover:shadow-md ${filter !== 'all'
-                      ? 'bg-red-100 border-red-500 text-red-700'
-                      : 'text-black hover:bg-gray-100'
+                    ? 'bg-red-100 border-red-500 text-red-700'
+                    : 'text-black hover:bg-gray-100'
                     }`}
                 >
                   <span className="truncate">
@@ -385,7 +384,7 @@ const Goggles = () => {
               </p>
             }
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10 px-4">
+            <div className="grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 px-2 sm:px-6 mb-12 mt-4 w-full max-w-7xl mx-auto">
               {displayedGoggles.map((goggle) => (
                 <ProductCard key={goggle.pro_id} product={goggle} />
               ))}
