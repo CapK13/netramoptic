@@ -7,7 +7,7 @@ const ReturnPolicy = () => {
         <h1 className="text-3xl font-bold border-b border-gray-700 pb-2">Return Policy</h1>
         
         <p>
-          At <span className="font-semibold">[Your Store Name]</span>, we take pride in offering quality products with careful packaging and prompt shipping. 
+          At <span className="font-semibold">Netram Optic</span>, we take pride in offering quality products with careful packaging and prompt shipping. 
           However, <span className="font-bold text-red-400">we currently do not accept returns or exchanges</span> for any items once sold.
         </p>
 
