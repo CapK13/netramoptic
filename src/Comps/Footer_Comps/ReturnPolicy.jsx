@@ -18,7 +18,7 @@ const ReturnPolicy = () => {
             <li>No refunds, returns, or exchanges under any circumstances.</li>
             <li>
               In rare cases of damaged or incorrect items, contact us within <span className="font-bold">48 hours</span> of delivery with photos at: 
-              <span className="text-blue-400"> [your support email]</span>.
+              <span className="text-blue-400"> netramforever@gmail.com</span>.
             </li>
           </ul>
         </div>
